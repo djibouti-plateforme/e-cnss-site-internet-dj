@@ -1,0 +1,43 @@
+/* Page dédiée de l'assistant + mode application mobile */
+body { background: linear-gradient(180deg, #dfe7fe 0%, #f4f6fe 60%, #fff 100%); min-height: 100vh; }
+.ap-header { padding: 14px 0; }
+.ap-header-inner { display: flex; justify-content: space-between; align-items: center; background: #fff; border-radius: 8px; padding: 10px 20px; box-shadow: 0 12px 30px rgba(31,58,95,.08); }
+.ap-back { font-weight: 700; color: var(--ink); font-size: 14px; }
+.ap-back:hover { color: var(--teal-2); }
+.ap-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; padding: 30px 0 40px; align-items: start; }
+.ap-intro h1 { font-size: clamp(34px, 4vw, 48px); font-weight: 800; }
+.ap-list { list-style: none; padding: 0; margin: 20px 0; }
+.ap-list li { padding: 10px 0 10px 30px; position: relative; border-bottom: 1px dashed #d6dcef; }
+.ap-list li::before { content: "✓"; position: absolute; left: 0; top: 11px; width: 20px; height: 20px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 12px; display: grid; place-items: center; }
+.ap-themes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.ap-themes .t { background: #fff; border: 1px solid #e1e6f3; padding: 5px 12px; border-radius: 30px; font-size: 13px; font-weight: 600; color: var(--navy); }
+.ap-themes .t.on { background: var(--navy); color: #fff; }
+.ap-note { background: rgba(255,255,255,.7); border-radius: 14px; padding: 16px 18px; font-size: 14px; }
+.ap-note b { color: var(--navy); }
+.ap-note p { margin: 2px 0 10px; }
+.ap-chat { height: calc(100vh - 140px); min-height: 560px; position: sticky; top: 16px; }
+.ap-chat .cb-panel { box-shadow: 0 25px 70px rgba(18,38,63,.18); }
+.app-bar, .app-tabs { display: none; }
+
+@media (max-width: 900px) {
+  .ap-grid { grid-template-columns: 1fr; }
+  .ap-intro { display: none; }
+  .ap-chat { height: calc(100vh - 110px); min-height: 0; position: static; }
+}
+
+/* Affichage dans l'application mobile */
+html.app body { background: #fff; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+html.app .ap-header, html.app .ap-intro, html.app .demo-ribbon { display: none; }
+html.app .ap-grid { display: block; padding: 0; width: 100%; flex: 1; min-height: 0; }
+html.app .ap-chat { height: 100%; min-height: 0; position: static; }
+html.app .cb-panel { border-radius: 0; box-shadow: none; }
+html.app .cb-head { padding-top: 10px; padding-bottom: 10px; }
+html.app .app-bar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border-bottom: 1px solid #eef1f8; font: 700 16px "Poppins"; color: var(--navy); }
+html.app .app-bar img { width: 26px; }
+html.app .app-bar .app-back { font-size: 26px; line-height: 1; color: var(--ink); }
+html.app .app-bar .app-bell { margin-left: auto; font-size: 16px; }
+html.app .app-tabs { display: flex; justify-content: space-around; border-top: 1px solid #eef1f8; padding: 6px 0 10px; background: #fff; font-size: 18px; }
+html.app .app-tabs span { display: flex; flex-direction: column; align-items: center; opacity: .55; }
+html.app .app-tabs span.on { opacity: 1; }
+html.app .app-tabs small { font: 600 10px "Nunito Sans"; color: var(--navy); }
+html.app .app-tabs span.on small { color: var(--teal-2); }

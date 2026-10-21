@@ -232,3 +232,5 @@ p.section-tag.center { display: table; margin-inline: auto; }
   .hero { padding-top: 50px; }
   .main-nav { padding-left: 14px; }
 }
+.channels { font-size: 14px; margin: 16px 0 0; color: #b9c9de; }
+.channels a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }

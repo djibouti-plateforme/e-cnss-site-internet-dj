@@ -162,6 +162,7 @@
             <li>Aucune donnée personnelle demandée</li>
           </ul>
           <button class="btn-primary" type="button" data-open-chat>Démarrer une conversation</button>
+          <p class="channels">Aussi disponible : <a href="assistant.html">page dédiée</a> · <a href="mobile.html">application mobile CNSS</a></p>
         </div>
         <div class="sample-qs">
           <p class="sample-title">Questions fréquentes</p>
@@ -326,51 +327,11 @@
         <h4>Lien rapide</h4>
         <a href="#">Formulaire</a><a href="#">Annuaire de la CNSS</a><a href="#structures">Nos structures</a><a href="#">Télé-service</a><a href="#">Conditions d'utilisation de nos applications mobiles</a>
         <a href="#" data-open-chat>Assistant CNSS</a>
+        <a href="assistant.html">Page dédiée de l'assistant</a>
+        <a href="mobile.html">Assistant dans l'application mobile</a>
       </div>
     </div>
   </footer>
-
-  <!-- ============ CHATBOT WIDGET ============ -->
-  <div class="cb-teaser" id="cb-teaser" hidden>
-    <button class="cb-teaser-close" aria-label="Fermer">×</button>
-    <p><strong>Bonjour 👋</strong><br>Une question sur votre retraite ou vos prestations ? Je peux vous aider.</p>
-  </div>
-  <button class="cb-launcher" id="cb-launcher" aria-label="Ouvrir l'Assistant CNSS" aria-expanded="false" aria-controls="cb-panel">
-    <svg class="ic-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
-    <svg class="ic-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
-    <span class="cb-badge" aria-hidden="true">1</span>
-  </button>
-
-  <section class="cb-panel" id="cb-panel" role="dialog" aria-modal="false" aria-labelledby="cb-title" hidden>
-    <header class="cb-head">
-      <div class="cb-avatar"><img src="assets/img/logo-cnss.png" alt=""></div>
-      <div class="cb-head-text">
-        <h2 id="cb-title">Assistant CNSS</h2>
-        <p><span class="cb-online"></span> Prestations sociales · Réponses sourcées</p>
-      </div>
-      <div class="cb-head-actions">
-        <button class="cb-icon" id="cb-font" aria-label="Agrandir le texte" title="Taille du texte">A+</button>
-        <button class="cb-icon" id="cb-reset" aria-label="Nouvelle conversation" title="Nouvelle conversation"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="cb-icon" id="cb-expand" aria-label="Agrandir la fenêtre" title="Agrandir"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-        <button class="cb-icon" id="cb-close" aria-label="Fermer l'assistant" title="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
-      </div>
-    </header>
-    <div class="cb-scopes" role="group" aria-label="Thème">
-      <button class="cb-scope active" data-scope="all">Tout</button>
-      <button class="cb-scope" data-scope="retraite">Retraite <small>Volet 1</small></button>
-      <button class="cb-scope" data-scope="famille">Famille</button>
-      <button class="cb-scope" data-scope="maternite">Maternité</button>
-      <button class="cb-scope" data-scope="atmp">AT/MP</button>
-    </div>
-    <div class="cb-body" id="cb-body" aria-live="polite"></div>
-    <div class="cb-pii-warn" id="cb-pii" hidden>⚠️ Ne communiquez pas de données personnelles (n° d'assuré, téléphone…). Elles seront masquées.</div>
-    <form class="cb-form" id="cb-form" autocomplete="off">
-      <label for="cb-input" class="sr-only">Votre question</label>
-      <textarea id="cb-input" rows="1" maxlength="500" placeholder="Posez votre question sur vos prestations…"></textarea>
-      <button type="submit" class="cb-send" aria-label="Envoyer"><svg viewBox="0 0 24 24"><path d="M3 11.5L21 3l-8.5 18-2.2-7.3L3 11.5z" fill="currentColor"/></svg></button>
-    </form>
-    <p class="cb-foot">Information indicative — ne remplace pas la décision de la CNSS.</p>
-  </section>
 
   <script src="assets/js/site.js"></script>
   <script src="assets/js/kb.js"></script>

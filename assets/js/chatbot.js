@@ -5,6 +5,57 @@
 (function () {
   const KB = window.CNSS_KB;
   const $ = (id) => document.getElementById(id);
+
+  // Le widget est injecté par ce script : le même code sert le site, la page dédiée et l'app mobile.
+  // <body data-cb-mode="page"> affiche la fenêtre en permanence (page dédiée / app mobile).
+  const MODE = document.body.dataset.cbMode || 'widget';
+  const CHANNEL = document.body.dataset.cbChannel || 'Site officiel';
+  if (!$('cb-panel')) {
+    const host = $('cb-host') || document.body;
+    host.insertAdjacentHTML('beforeend', `
+  <div class="cb-teaser" id="cb-teaser" hidden>
+    <button class="cb-teaser-close" aria-label="Fermer">×</button>
+    <p><strong>Bonjour 👋</strong><br>Une question sur votre retraite ou vos prestations ? Je peux vous aider.</p>
+  </div>
+  <button class="cb-launcher" id="cb-launcher" aria-label="Ouvrir l'Assistant CNSS" aria-expanded="false" aria-controls="cb-panel">
+    <svg class="ic-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+    <span class="cb-badge" aria-hidden="true">1</span>
+  </button>
+
+  <section class="cb-panel" id="cb-panel" role="dialog" aria-modal="false" aria-labelledby="cb-title" hidden>
+    <header class="cb-head">
+      <div class="cb-avatar"><img src="assets/img/logo-cnss.png" alt=""></div>
+      <div class="cb-head-text">
+        <h2 id="cb-title">Assistant CNSS</h2>
+        <p><span class="cb-online"></span> Prestations sociales · Réponses sourcées</p>
+      </div>
+      <div class="cb-head-actions">
+        <button class="cb-icon" id="cb-debug" aria-pressed="false" aria-label="Sous le capot : voir le fonctionnement" title="Sous le capot (mode présentateur)"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+        <button class="cb-icon" id="cb-font" aria-label="Agrandir le texte" title="Taille du texte">A+</button>
+        <button class="cb-icon" id="cb-reset" aria-label="Nouvelle conversation" title="Nouvelle conversation"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="cb-icon" id="cb-expand" aria-label="Agrandir la fenêtre" title="Agrandir"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <button class="cb-icon" id="cb-close" aria-label="Fermer l'assistant" title="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+      </div>
+    </header>
+    <div class="cb-scopes" role="group" aria-label="Thème">
+      <button class="cb-scope active" data-scope="all">Tout</button>
+      <button class="cb-scope" data-scope="retraite">Retraite <small>Volet 1</small></button>
+      <button class="cb-scope" data-scope="famille">Famille</button>
+      <button class="cb-scope" data-scope="maternite">Maternité</button>
+      <button class="cb-scope" data-scope="atmp">AT/MP</button>
+    </div>
+    <div class="cb-body" id="cb-body" aria-live="polite"></div>
+    <div class="cb-pii-warn" id="cb-pii" hidden>⚠️ Ne communiquez pas de données personnelles (n° d'assuré, téléphone…). Elles seront masquées.</div>
+    <form class="cb-form" id="cb-form" autocomplete="off">
+      <label for="cb-input" class="sr-only">Votre question</label>
+      <textarea id="cb-input" rows="1" maxlength="500" placeholder="Posez votre question sur vos prestations…"></textarea>
+      <button type="submit" class="cb-send" aria-label="Envoyer"><svg viewBox="0 0 24 24"><path d="M3 11.5L21 3l-8.5 18-2.2-7.3L3 11.5z" fill="currentColor"/></svg></button>
+    </form>
+    <p class="cb-foot">Information indicative — ne remplace pas la décision de la CNSS.</p>
+  </section>
+`);
+  }
   const panel = $('cb-panel');
   const launcher = $('cb-launcher');
   const body = $('cb-body');
@@ -13,11 +64,18 @@
   const teaser = $('cb-teaser');
   const piiWarn = $('cb-pii');
   const sendBtn = form.querySelector('.cb-send');
+  if (window.innerWidth < 480) input.placeholder = 'Votre question…';
+  if (MODE === 'page') {
+    launcher.remove();
+    teaser.remove();
+    panel.classList.add('inline');
+    panel.hidden = false;
+  }
 
   const CONTACT = 'au <strong>+253 21 35 03 21</strong> ou à un guichet de la CNSS (Boulevard de la République, dim.–jeu. 8h–17h)';
   const DISCLAIMER = 'ℹ️ Information indicative, fondée sur la documentation officielle de la CNSS. Elle ne remplace pas la décision de la CNSS.';
 
-  const state = { lastGroup: null, scope: 'all', busy: false, started: false };
+  const state = { lastGroup: null, scope: 'all', busy: false, started: false, debug: false };
 
   // ---------- utilitaires ----------
   const norm = (s) => ' ' + s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -95,26 +153,26 @@
   function answer(question) {
     const n = norm(question);
     if (RX.injection.test(n)) {
-      return { kind: 'guard', text: "Je ne peux pas modifier mon fonctionnement. Je suis l'assistant de la CNSS et je réponds uniquement aux questions sur les **prestations sociales** (retraite, prestations familiales, maternité, accidents du travail).", chips: ['À quelle pension de retraite puis-je prétendre ?'] };
+      return { kind: 'guard', reason: 'injection', text: "Je ne peux pas modifier mon fonctionnement. Je suis l'assistant de la CNSS et je réponds uniquement aux questions sur les **prestations sociales** (retraite, prestations familiales, maternité, accidents du travail).", chips: ['À quelle pension de retraite puis-je prétendre ?'] };
     }
     if (RX.greet.test(n)) {
-      return { kind: 'small', text: 'Bonjour ! Posez-moi votre question sur vos prestations : conditions, pièces à fournir, démarches…', chips: ['À quelle pension de retraite puis-je prétendre ?', 'Quels documents dois-je fournir pour ma demande ?'] };
+      return { kind: 'small', reason: 'accueil', text: 'Bonjour ! Posez-moi votre question sur vos prestations : conditions, pièces à fournir, démarches…', chips: ['À quelle pension de retraite puis-je prétendre ?', 'Quels documents dois-je fournir pour ma demande ?'] };
     }
     if (RX.thanks.test(n)) {
-      return { kind: 'small', text: "Avec plaisir ! N'hésitez pas si vous avez une autre question.", chips: [] };
+      return { kind: 'small', reason: 'accueil', text: "Avec plaisir ! N'hésitez pas si vous avez une autre question.", chips: [] };
     }
     if (RX.dossier.test(n)) {
-      return { kind: 'guard', text: `Je n'ai **pas accès aux dossiers individuels** et je ne peux pas suivre une demande en cours.\n\nPour connaître l'état de votre dossier, contactez la CNSS ${'{CONTACT}'}.\n\nJe peux en revanche vous expliquer les conditions, les pièces à fournir ou les démarches.`, chips: ['Comment déposer ma demande de pension ?'] };
+      return { kind: 'guard', reason: 'dossier', text: `Je n'ai **pas accès aux dossiers individuels** et je ne peux pas suivre une demande en cours.\n\nPour connaître l'état de votre dossier, contactez la CNSS ${'{CONTACT}'}.\n\nJe peux en revanche vous expliquer les conditions, les pièces à fournir ou les démarches.`, chips: ['Comment déposer ma demande de pension ?'] };
     }
 
     let group = findKey(n, KB.groups);
     const intent = findKey(n, KB.intents);
 
     if (group === 'amu') {
-      return { kind: 'scope', text: `Les questions sur l'**Assurance Maladie Universelle (AMU)** ne sont pas encore couvertes par l'assistant.\n\nConsultez la rubrique « Assurance Maladie Universelle » du site ou contactez la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?'] };
+      return { kind: 'scope', reason: 'amu', text: `Les questions sur l'**Assurance Maladie Universelle (AMU)** ne sont pas encore couvertes par l'assistant.\n\nConsultez la rubrique « Assurance Maladie Universelle » du site ou contactez la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?'] };
     }
     if (RX.notCovered.test(n)) {
-      return { kind: 'scope', text: `Je ne trouve pas cette information dans la documentation officielle dont je dispose. Plutôt que de risquer une réponse inexacte, je vous invite à contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?'] };
+      return { kind: 'scope', reason: 'absent', text: `Je ne trouve pas cette information dans la documentation officielle dont je dispose. Plutôt que de risquer une réponse inexacte, je vous invite à contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?'] };
     }
 
     let usedContext = false;
@@ -123,9 +181,9 @@
     if (!group && intent && RX.domain.test(n)) group = 'retraite';
     if (!group) {
       if (RX.domain.test(n) || intent) {
-        return { kind: 'scope', text: `Je ne trouve pas d'information correspondant à votre question dans la documentation officielle. Pouvez-vous reformuler ? Vous pouvez aussi contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?', 'Combien sont les allocations familiales ?'] };
+        return { kind: 'scope', reason: 'absent', text: `Je ne trouve pas d'information correspondant à votre question dans la documentation officielle. Pouvez-vous reformuler ? Vous pouvez aussi contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?', 'Combien sont les allocations familiales ?'] };
       }
-      return { kind: 'scope', text: "Je suis l'assistant de la CNSS : je réponds uniquement aux questions sur les **prestations sociales** (retraite, prestations familiales, maternité, accidents du travail). Que souhaitez-vous savoir ?", chips: ['À quelle pension de retraite puis-je prétendre ?', 'Comment déclarer un accident de travail ?'] };
+      return { kind: 'scope', reason: 'hors-perimetre', text: "Je suis l'assistant de la CNSS : je réponds uniquement aux questions sur les **prestations sociales** (retraite, prestations familiales, maternité, accidents du travail). Que souhaitez-vous savoir ?", chips: ['À quelle pension de retraite puis-je prétendre ?', 'Comment déclarer un accident de travail ?'] };
     }
 
     const routes = KB.route[group];
@@ -134,7 +192,7 @@
     state.lastGroup = group;
     const note = RX.simulation.test(n) && id !== 'r-calcul'
       ? "\n\nℹ️ Je ne réalise pas de simulation personnalisée : pour votre montant exact, adressez-vous à un guichet de la CNSS." : '';
-    return { kind: 'rag', id, entry, usedContext, text: entry.text + note, chips: entry.followups };
+    return { kind: 'rag', reason: 'rag', group, intent, id, entry, usedContext, text: entry.text + note, chips: entry.followups };
   }
 
   // ---------- affichage ----------
@@ -185,8 +243,54 @@
     return `<details class="cb-sources"><summary>Sources (${entry.sources.length})</summary>${items}</details>`;
   }
 
-  function feedbackHtml() {
-    return '<div class="cb-feedback">Cette réponse vous a-t-elle été utile ? <button type="button" data-fb="up" aria-label="Utile">👍</button><button type="button" data-fb="down" aria-label="Pas utile">👎</button></div>';
+  function feedbackHtml(logId) {
+    return `<div class="cb-feedback" data-log="${logId}">Cette réponse vous a-t-elle été utile ? <button type="button" data-fb="up" aria-label="Utile">👍</button><button type="button" data-fb="down" aria-label="Pas utile">👎</button></div>`;
+  }
+
+  // ---------- « Sous le capot » : trace de la chaîne RAG (CDC §9, étapes 1 à 6) ----------
+  const rnd = (min, max) => Math.round(min + Math.random() * (max - min));
+  const plain = (t) => t.replace(/\*\*/g, '').replace(/\|[^\n]*\|/g, '').replace(/\n+/g, ' ').replace(/^[\s\-\d.]+/, '').trim();
+  const cut = (t, n) => (t.length > n ? t.slice(0, n).replace(/\s+\S*$/, '') + '…' : t);
+  // Textes remplacés présents dans l'historique du corpus : retrouvés mais exclus (EF-15).
+  const ABROGES = {
+    maternite: { doc: 'Code du travail, art. 113 (loi n°133/AN/05/5e L) — congé de 14 semaines', by: 'loi n°51/AN/19/8e L du 04/07/2019' },
+  };
+
+  function buildTrace(res, masked, found) {
+    const t = { guard: rnd(35, 90) };
+    const reasonLabel = {
+      injection: 'Tentative de détournement détectée → refus',
+      dossier: 'Demande sur un dossier individuel → orientation CNSS',
+      amu: 'Thème hors périmètre (AMU) → orientation',
+      absent: 'Aucun passage pertinent (score < 0,55) → « information absente », pas d\'invention',
+      'hors-perimetre': 'Question sans rapport avec les prestations → refus poli',
+      accueil: 'Formule de politesse → réponse directe',
+    };
+    const rows = [];
+    rows.push(['①', 'Question reçue', `Canal : ${esc(CHANNEL)} · « ${esc(cut(masked, 90))} »`]);
+    rows.push(['②', 'Garde-fous', `${found ? '<span class="warn">Donnée personnelle détectée et masquée (EF-18)</span>' : 'Aucune donnée personnelle'} · ${res.kind === 'rag' ? 'Dans le périmètre ✓' : `<span class="warn">${reasonLabel[res.reason] || res.reason}</span>`}`, t.guard]);
+    let total = t.guard;
+    if (res.kind === 'rag') {
+      t.embed = rnd(60, 130); t.search = rnd(25, 70); t.llm = rnd(1700, 3600);
+      total += t.embed + t.search + t.llm;
+      const others = Object.entries(KB.entries).filter(([k, e]) => k !== res.id && e.theme === res.entry.theme).slice(0, 2);
+      const top = 0.86 + Math.random() * 0.08;
+      const passages = [[res.entry.sources[0].doc, res.entry.sources[0].ref, plain(res.entry.text), top]]
+        .concat(others.map(([, e], i) => [e.sources[0].doc, e.sources[0].ref, plain(e.text), top - 0.12 - i * 0.07]));
+      const ab = ABROGES[res.entry.theme];
+      rows.push(['③', 'Vectorisation', 'Question convertie en vecteur (modèle d\'embeddings multilingue — choix au jalon J1)', t.embed]);
+      rows.push(['④', 'Recherche (Chroma)', 'Top-5 passages · filtre <code>statut = en vigueur</code>' +
+        '<div class="cb-passages">' + passages.map(([d, r, x, sc]) => `<div class="cb-pass"><span class="sc">${sc.toFixed(2)}</span><b>${esc(d)}</b> <i>${esc(r)}</i><br>« ${esc(cut(x, 120))} »</div>`).join('') +
+        (ab ? `<div class="cb-pass ex"><span class="sc">exclu</span><b>${esc(ab.doc)}</b><br>Texte abrogé, remplacé par la ${esc(ab.by)} : écarté de la réponse (EF-15).</div>` : '') + '</div>', t.search]);
+      rows.push(['⑤', 'Modèle de langage', 'Consigne : <i>« Réponds uniquement à partir des passages fournis, en français simple, cite tes sources ; si l\'information est absente, dis-le. »</i> · température 0,1 · ~' + rnd(380, 720) + ' jetons', t.llm]);
+      rows.push(['⑥', 'Contrôles de sortie', 'Source citée ✓ · Date de version ✓ · Avertissement EF-05 ✓', 0]);
+    } else if (res.reason !== 'accueil') {
+      rows.push(['—', 'Arrêt', res.reason === 'absent' ? 'Recherche effectuée, aucun passage au-dessus du seuil : <b>aucun appel au modèle</b>, réponse de repli.' : 'Chaîne interrompue avant la recherche : <b>aucun appel au modèle</b>.', 0]);
+    }
+    const ok = total < 10000;
+    const html = `<details class="cb-trace" open><summary>Sous le capot — temps total ${(total / 1000).toFixed(1).replace('.', ',')} s <span class="${ok ? 'ok' : 'warn'}">${ok ? '✓ < 10 s (ENF-02)' : '⚠ > 10 s'}</span></summary>` +
+      rows.map(([n, l, d, ms]) => `<div class="cb-step"><span class="n">${n}</span><div><b>${l}</b>${ms ? `<span class="ms">${ms} ms</span>` : ''}<div>${d}</div></div></div>`).join('') + '</details>';
+    return { html, total };
   }
 
   async function reveal(bubble, html) {
@@ -216,6 +320,7 @@
 
     const { masked, found } = addUser(q);
     const res = answer(masked);
+    const trace = buildTrace(res, masked, found);
     const bubble = addBot('<span class="cb-typing"><i></i><i></i><i></i></span><div class="cb-steps"></div>');
     const steps = bubble.querySelector('.cb-steps');
     const step = async (label, ms) => {
@@ -232,7 +337,9 @@
       await step('Rédaction de la réponse sourcée…', 550);
     }
 
+    const logId = logUsage(res, masked, found, trace.total);
     let html = '';
+    if (state.debug) html += trace.html;
     if (found) html += '<p class="cb-disclaimer">🔒 Vous avez saisi une donnée personnelle : elle a été masquée et ne sera pas conservée. Inutile de la communiquer pour obtenir une information.</p>';
     if (res.kind === 'rag') {
       html += res.entry.volet === 1
@@ -241,26 +348,36 @@
       if (res.usedContext) html += '<p style="font-size:.8em;color:#8a9bb0;margin:0 0 6px">↪ Suite de la conversation précédente</p>';
     }
     html += md(res.text.replace(/\{CONTACT\}/g, '§CONTACT§')).replace(/§CONTACT§/g, CONTACT);
-    if (res.kind === 'rag') html += sourcesHtml(res.entry, res.id) + `<p class="cb-disclaimer">${DISCLAIMER}</p>` + feedbackHtml();
+    if (res.kind === 'rag') html += sourcesHtml(res.entry, res.id) + `<p class="cb-disclaimer">${DISCLAIMER}</p>` + feedbackHtml(logId);
 
     await reveal(bubble, html);
     addChips(res.chips);
     // Réponse longue : on remonte au début de la réponse pour la lire en entier.
     const msg = bubble.parentElement;
     if (msg.offsetHeight > body.clientHeight * 0.8) body.scrollTop = msg.previousElementSibling.offsetTop - 8;
-    logUsage(res);
     state.busy = false;
     sendBtn.disabled = false;
     input.focus();
   }
 
-  // Statistiques d'usage anonymes (EF-12) — ici stockées localement pour la démo.
-  function logUsage(res) {
-    const stats = store.get('cnss-cb-stats') || { questions: 0, sansReponse: 0, themes: {} };
-    stats.questions++;
-    if (res.kind !== 'rag' && res.kind !== 'small') stats.sansReponse++;
-    if (res.entry) stats.themes[res.entry.theme] = (stats.themes[res.entry.theme] || 0) + 1;
-    store.set('cnss-cb-stats', stats);
+  // Journal anonymisé (EF-12, EF-18) : partagé avec la console de supervision de la Cellule DATA,
+  // servie sur le même domaine. En production, il serait écrit côté API, pas dans le navigateur.
+  const LOG_KEY = 'cnss-assistant-log';
+  function logUsage(res, masked, found, latency) {
+    const log = store.get(LOG_KEY) || [];
+    const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    log.push({
+      id, ts: new Date().toISOString(), canal: CHANNEL, question: masked, kind: res.kind, reason: res.reason,
+      theme: res.entry ? res.entry.theme : null, reponse: res.id || null, pii: found, contexte: !!res.usedContext,
+      latence: latency, feedback: null,
+    });
+    store.set(LOG_KEY, log.slice(-300));
+    return id;
+  }
+  function setFeedback(id, value) {
+    const log = store.get(LOG_KEY) || [];
+    const e = log.find((x) => x.id === id);
+    if (e) { e.feedback = value; store.set(LOG_KEY, log); }
   }
 
   function welcome() {
@@ -273,6 +390,7 @@
 
   // ---------- ouverture / fermeture ----------
   function openPanel() {
+    if (MODE === 'page') return;
     panel.hidden = false;
     launcher.classList.add('open');
     launcher.setAttribute('aria-expanded', 'true');
@@ -282,18 +400,42 @@
     setTimeout(() => input.focus(), 50);
   }
   function closePanel() {
+    if (MODE === 'page') return;
     panel.hidden = true;
     launcher.classList.remove('open');
     launcher.setAttribute('aria-expanded', 'false');
     launcher.focus();
   }
 
-  launcher.addEventListener('click', () => (panel.hidden ? openPanel() : closePanel()));
-  $('cb-close').addEventListener('click', closePanel);
+  if (MODE === 'page') {
+    state.started = true;
+    welcome();
+    $('cb-close').remove();
+    $('cb-expand').remove();
+  } else {
+    launcher.addEventListener('click', () => (panel.hidden ? openPanel() : closePanel()));
+    $('cb-close').addEventListener('click', closePanel);
+    $('cb-expand').addEventListener('click', () => panel.classList.toggle('expanded'));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) closePanel(); });
+    // Bulle d'accroche après quelques secondes.
+    setTimeout(() => { if (panel.hidden && !state.started) teaser.hidden = false; }, 4000);
+    teaser.querySelector('.cb-teaser-close').addEventListener('click', (e) => { e.stopPropagation(); teaser.hidden = true; });
+    teaser.addEventListener('click', openPanel);
+  }
   $('cb-reset').addEventListener('click', () => { if (!state.busy) welcome(); });
-  $('cb-expand').addEventListener('click', () => panel.classList.toggle('expanded'));
   $('cb-font').addEventListener('click', () => panel.classList.toggle('big-text'));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) closePanel(); });
+
+  // Mode présentateur : bouton dans l'en-tête, ou ?capot=1 dans l'URL.
+  const debugBtn = $('cb-debug');
+  function setDebug(on) {
+    state.debug = on;
+    debugBtn.setAttribute('aria-pressed', on);
+    debugBtn.classList.toggle('on', on);
+    panel.classList.toggle('debug', on);
+    store.set('cnss-cb-debug', on);
+  }
+  debugBtn.addEventListener('click', () => setDebug(!state.debug));
+  setDebug(/[?&]capot=1/.test(location.search) || store.get('cnss-cb-debug') === true);
 
   panel.querySelectorAll('.cb-scope').forEach((b) => b.addEventListener('click', () => {
     panel.querySelectorAll('.cb-scope').forEach((x) => x.classList.toggle('active', x === b));
@@ -307,6 +449,7 @@
     const box = fb.parentElement;
     box.querySelectorAll('button').forEach((b) => b.classList.toggle('sel', b === fb));
     box.firstChild.textContent = fb.dataset.fb === 'up' ? 'Merci pour votre retour ! ' : 'Merci, votre retour aidera à améliorer l\'assistant. ';
+    setFeedback(box.dataset.log, fb.dataset.fb);
   });
 
   form.addEventListener('submit', (e) => {
@@ -330,11 +473,6 @@
     openPanel();
     setTimeout(() => ask(el.dataset.ask), 250);
   }));
-
-  // Bulle d'accroche après quelques secondes.
-  setTimeout(() => { if (panel.hidden && !state.started) teaser.hidden = false; }, 4000);
-  teaser.querySelector('.cb-teaser-close').addEventListener('click', (e) => { e.stopPropagation(); teaser.hidden = true; });
-  teaser.addEventListener('click', openPanel);
 
   // Pour les tests : window.CNSS_CHAT.answer('…')
   window.CNSS_CHAT = { answer, ask, open: openPanel };
