@@ -1,0 +1,83 @@
+# Profil de la sécurité sociale de Djibouti — Association internationale de la sécurité sociale (AISS)
+@titre: Profil pays Djibouti — AISS (politiques au 1er juillet 2022)
+@type: Source externe
+@prestation: multi
+@reference: AISS, ISSA Country profiles: Djibouti, publié le 7 août 2024 (politiques au 1er juillet 2022) — traduction française de synthèse
+@url: https://www.issa.int/sites/default/files/documents/2024-07/Djibouti.pdf
+@date: 2022-07-01
+@statut: Source externe — à valider par le référent métier
+
+## Retraite — textes applicables
+Le régime général de retraite des salariés repose sur la loi n°154/AN/02/4ème L du 31 janvier 2002 (organisme de protection sociale et régime général de retraite des travailleurs salariés). Elle a été modifiée en 2008 (loi n°212/AN/07/5ème L du 19 janvier, administration et financement ; loi n°17/AN/08/6ème L du 11 octobre 2008 sur l'âge de la retraite), en 2009 (loi n°58/AN/09/6ème L du 11 août, impôt de solidarité), en 2011 (loi n°121/AN/11/6ème L du 20 juillet 2011, décès du travailleur), en 2013 (loi n°198/AN/13/6ème L du 20 février, pensions de survivants) et en 2015 (loi n°108/AN/15/7ème L supprimant l'impôt de solidarité sur les prestations et pensions servies par la CNSS). Le décret n°2010-0199/PR/MEIFP du 27 octobre 2010 porte sur les pensions de vieillesse. Un régime spécial existe pour les militaires, policiers, fonctionnaires et membres du gouvernement.
+
+## Retraite — qui est couvert ?
+Sont obligatoirement couverts les salariés relevant du Code du travail, y compris les salariés du secteur privé et certains agents du secteur public. Les personnes au chômage qui étaient auparavant assurées obligatoirement peuvent s'assurer volontairement. Les travailleurs indépendants et les travailleurs agricoles sont exclus du régime général de retraite. Tous les résidents légaux sont couverts.
+
+## Retraite — cotisations
+La cotisation retraite est de 4 % du salaire mensuel à la charge du salarié et de 4 % à la charge de l'employeur, soit 8 % au total. Pour l'assuré volontaire, la cotisation est de 8 % du dernier salaire mensuel. Il n'y a ni minimum ni maximum de salaire pour le calcul de la cotisation retraite. L'État ne verse pas de contribution particulière (il cotise en tant qu'employeur).
+
+## Pension de retraite normale — conditions d'âge et de durée
+L'âge de la retraite est de 60 ans pour les hommes comme pour les femmes, avec au moins 25 années de cotisations, et l'activité salariée doit cesser. La retraite est possible à 55 ans avec au moins 20 années de cotisations pour les mères de famille et pour les dockers.
+
+## Pension de retraite normale — montant
+La pension est égale, pour chaque année de cotisation, à 1,5 % du salaire de référence pour les années acquises depuis 2007, 1,8 % pour les années 2002 à 2006 et 2 % pour les années 1976 à 2001. Le salaire de référence est le salaire annuel moyen des 10 dernières années. La pension minimale est de 170 000 FDJ par an (environ 14 167 FDJ par mois). La pension maximale est de 81 % du salaire annuel moyen des 10 dernières années.
+
+## Retraite anticipée
+La retraite anticipée est possible dès 50 ans, pour les hommes et les femmes, avec au moins 20 années de cotisations, lorsque l'assuré est reconnu physiquement ou mentalement inapte au travail ; l'inaptitude est constatée par un médecin. La pension est réduite pour chaque année d'anticipation : elle va de 50 % de la pension complète à 50 ans à 90 % à 59 ans.
+
+## Retraite différée et pension partielle
+Le départ en retraite peut être différé, sans limite d'âge. Une pension partielle (proportionnelle) est possible à 55 ans avec au moins 15 années de cotisations : la pension est réduite de 2 % pour chaque année de cotisation manquante par rapport à la durée requise pour une pension complète.
+
+## Pension de survivants (réversion)
+Conditions : le défunt percevait ou avait droit à une pension de vieillesse, ou totalisait au moins 18 années de cotisations au moment du décès. Bénéficiaires : le conjoint survivant âgé de 45 ans ou plus sans enfant à charge (sans condition d'âge s'il a des enfants à charge), marié au défunt depuis au moins les cinq dernières années ; les orphelins de moins de 15 ans (21 ans s'ils sont étudiants, sans limite d'âge s'ils sont handicapés). Un veuf dont plusieurs épouses sont décédées ne perçoit que la pension de survivant la plus élevée. La pension est payable à l'étranger. Elle cesse en cas de remariage, sans indemnité de remariage.
+
+## Pension de survivants — montant
+Le conjoint survivant reçoit 50 % de la pension de vieillesse que percevait (ou à laquelle avait droit) le défunt ; s'il y a plusieurs conjoints, la pension est partagée à parts égales. Les orphelins se partagent 30 % de cette pension, chaque part ne pouvant dépasser 10 %. Le total des pensions de survivants est plafonné à 80 % de la pension du défunt. Minimum indiqué : 170 000 FDJ par an. Si le défunt ne remplissait pas les conditions d'une pension de vieillesse, un capital égal au total des cotisations salariales et patronales est partagé à parts égales entre les ayants droit.
+
+## Assurance maladie — organisation
+Le système d'assurance maladie universelle (loi n°24/AN/14/7ème L de 2014, mise en œuvre en 2015 via la loi n°109/AN/15/7ème L) comprend l'assurance maladie obligatoire (AMO, assurance sociale) et le programme d'assistance sociale de santé (PASS, assistance sociale). Sont obligatoirement couverts par l'AMO : les salariés relevant du Code du travail, les employés de maison, les travailleurs manuels, les dockers, les travailleurs indépendants, les étudiants et les retraités dont la pension mensuelle est inférieure à 50 000 FDJ, ainsi que leurs ayants droit. Le PASS couvre les résidents démunis.
+
+## Assurance maladie — cotisations
+Cotisation AMO des salariés : 2 % à la charge du salarié et 5 % à la charge de l'employeur, sur un salaire mensuel compris entre 35 000 FDJ (minimum) et 400 000 FDJ (maximum). Travailleurs indépendants : 7 % du revenu mensuel, entre 35 000 et 400 000 FDJ. Le PASS et le paquet universel sont financés par l'État.
+
+## Assurance maladie — prestations
+Il n'y a pas de durée minimale d'affiliation. Ayants droit : le conjoint et les enfants jusqu'à 18 ans (sans limite s'ils sont handicapés). L'AMO prend en charge les consultations de généralistes, la chirurgie, l'accouchement, l'hospitalisation, les médicaments, les analyses, la radiologie, les soins spécialisés, les soins dentaires et le transport sanitaire, auprès des hôpitaux publics, parapublics et privés conventionnés. Les soins sont gratuits dans les hôpitaux publics ; une participation peut s'appliquer dans les établissements parapublics et privés conventionnés. Le paquet universel (centres de santé communautaires : vaccination, consultations des enfants de moins de 5 ans, santé de la reproduction, accouchement, tuberculose, paludisme, épidémies) est sans participation.
+
+## Indemnités maladie
+En cas de maladie, l'employeur verse 50 % du salaire (salaire de base ou total) sur présentation d'un certificat médical, pendant 15 jours à 9 mois selon l'ancienneté et le type d'emploi. Il n'y a pas de durée minimale d'activité.
+
+## Maternité — indemnités
+Conditions : au moins trois mois d'activité salariée, prévenir l'employeur un mois avant la date prévue de l'accouchement et fournir un certificat médical. L'indemnité est égale à 100 % du dernier salaire mensuel, avec un salaire de référence compris entre 35 000 FDJ (minimum) et 400 000 FDJ (maximum) par mois. Elle est versée pendant 26 semaines : 8 semaines avant et 18 semaines après la date prévue de l'accouchement, prolongeables de trois semaines en cas de maladie liée à la grossesse médicalement constatée. Les 14 premières semaines sont financées conjointement par l'employeur et la CNSS ; ensuite, seule la CNSS paie. Les cotisations des prestations familiales financent ces indemnités.
+
+## Congé de paternité
+Le père bénéficie d'un congé de paternité payé par l'employeur à 100 % du salaire journalier, pendant trois jours au plus.
+
+## Accidents du travail — couverture et cotisation
+Sont couverts les salariés relevant du Code du travail, les apprentis et les stagiaires. La cotisation accidents du travail est de 1,2 % de la masse salariale, à la charge exclusive de l'employeur, sur un salaire compris entre 35 000 et 400 000 FDJ par mois. Le salarié ne cotise pas.
+
+## Accidents du travail — indemnités journalières
+L'accident doit être déclaré par l'employeur dans les 48 heures ; la maladie professionnelle doit être déclarée par le salarié dans les deux ans suivant la première constatation médicale. L'indemnité journalière est de 50 % du salaire journalier pendant les 29 premiers jours d'incapacité, puis 75 %. Elle est versée du lendemain de l'arrêt jusqu'à la guérison ou la consolidation, avec un jour de carence.
+
+## Accidents du travail — rente d'incapacité permanente
+Pour un taux d'incapacité de 11 % à 100 %, une rente est calculée sur le dernier salaire annuel et le taux d'incapacité. Si la victime a besoin de l'assistance constante d'une tierce personne, une majoration de 40 % de la rente est versée.
+
+## Accidents du travail — décès de la victime
+En cas de décès consécutif à un accident du travail ou une maladie professionnelle : le conjoint survivant reçoit une rente de 30 % du salaire annuel du défunt (partagée s'il y a plusieurs conjoints) ; les orphelins de moins de 21 ans reçoivent 15 % pour chacun des deux premiers, 10 % pour chaque orphelin supplémentaire et 20 % pour chaque orphelin de père et de mère ; le total est plafonné à 85 % du salaire. Une allocation pour frais funéraires de 72 000 FDJ est versée.
+
+## Chômage
+Il n'existe pas d'assurance chômage. Le Code du travail de 2006 impose à l'employeur une indemnité de licenciement (hors faute grave), de deux à six mois de salaire selon la taille de l'entreprise (six mois pour les entreprises de plus de 49 salariés).
+
+## Prestations familiales — cotisation
+La cotisation prestations familiales est de 5,5 % de la masse salariale, à la charge exclusive de l'employeur, sur un salaire mensuel compris entre 20 000 FDJ (15 850 FDJ pour les employés de maison) et 400 000 FDJ. Elle finance aussi les indemnités de maternité.
+
+## Allocations familiales — conditions et montant
+Les allocations familiales sont versées pour les six premiers enfants à charge de moins de 15 ans (18 ans pour un apprenti gagnant au plus 50 % du salaire minimum ; 21 ans pour un étudiant ou un enfant handicapé), à la personne qui a la charge principale des enfants. L'assuré doit résider à Djibouti et avoir travaillé au moins 120 heures ou 18 jours au cours du dernier mois. Montant : 1 400 FDJ par mois et par enfant, dans la limite de six enfants, payés par trimestre. Les allocations familiales du régime général sont réservées aux nationaux.
+
+## Allocation de mariage
+Conditions : avoir travaillé au moins 120 heures ou 18 jours dans le mois du mariage et avoir un revenu mensuel ne dépassant pas 50 000 FDJ. En cas de pluralité d'épouses, l'allocation est versée pour une seule épouse sans emploi. Montant : 2 500 FDJ par mois, payés par trimestre, sans limite de durée.
+
+## Programme national de solidarité famille
+Un transfert monétaire de 30 000 FDJ par trimestre est versé aux ménages en situation d'extrême pauvreté comprenant des membres de moins de 16 ans, handicapés ou de plus de 70 ans (programme géré par le Secrétariat d'État aux affaires sociales, financé par l'État). Le montant peut être majoré en cas de personne handicapée ou âgée de plus de 70 ans.
+
+## Organisation
+La CNSS (Caisse nationale de sécurité sociale) administre les régimes et recouvre les cotisations ; elle est dirigée par un conseil d'administration tripartite et un directeur général. Le ministère du Travail chargé de la Réforme de l'Administration assure la tutelle et la réglementation.

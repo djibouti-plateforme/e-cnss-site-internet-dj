@@ -1,0 +1,565 @@
+      GUIDE DES MESURES PREVENTIVES
+       CONTRE LA COVID-19 POUR LA
+         CONTINUITE DES ACTIVITES
+       PROFESSIONNELLES EN PERIODE
+                D’EPIDEMIE
+
+
+
+
+CAISSE NATIONALE DE SECURITE SOCIALE - MAI 2020
+
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   0
+  TABLE DES MATIERES
+
+  Préambule : …………………………………………………………………………………... 3
+
+ I.Mode de transmission, durée de vie et symptomatologie de la COVID-19 : ………...……. 3
+II.Les intervenants et leurs rôles dans l’entreprise : …………………………………………... 5
+   1. Rôle de l’employeur : ……………………………………………………………………. 5
+   2. Rôle du salarié : …………………………………………………………………………. 5
+III.Les mesures barrières contre la COVID-19 sur tous les lieux de travail : …………………. 5
+   1. L’hygiène des mains : …………………………………………………………………….. 5
+   2. L’hygiène respiratoire : …………………………………………………………...……… 6
+   3. Les masques barrières en tissu ou à usage unique : ………………………………...……. 6
+   4. Le respect de la distanciation physique : ……………………………...…………………. 7
+   5. Désinfection régulière : ……………………………………………...…………………… 7
+   6. Limiter les déplacements : ……………………………………………………………....... 7
+IV.Mesures organisationnelles : ………………………………………………………………... 7
+   1. Gestion des ressources humaines : ……………………………………………………….. 7
+   2. Mesures de prévention à l’entrée de l’entreprise : ………………………………………. 8
+   3. Mesures de prévention au niveau des vestiaires : ……………………………………….. 8
+   4. Mesures de prévention au niveau des réfectoires et des lieux de pauses : …...…………. 8
+   5. Salubrité de l’environnement : …………………………………………………………… 9
+   6. Ventilation des locaux : ………………………………………………………………….10
+   7. Interaction de l’entreprise avec le milieu extérieur : …………………………...……..… 10
+   8. Lorsque les documents papier sont requis : ………………………………….………….. 10
+   9. Activités de travaux : …………………………….………………...…………………… 11
+         a. Mesures générales : ………………………………………………………...……… 11
+         b. Mesures spécifiques pour les activités de travaux dans les locaux de clients : …… 11
+         c. Mesures spécifiques pour les activités de travaux chez les particuliers : ……...…… 11
+V.Transport des salariés : ……………………………………………….……………………. 12
+   1. En cas de transport par bus assuré par l’entreprise : ……………...…………………… 12
+   2. En cas d’utilisation de moyens de transport individuels : ………………………………...12
+   3. En cas de transport public : ……………………………………………………………...12
+VI.Conduite à tenir en cas de découverte d’un cas suspect « COVID- 19 » sur les lieux du
+  travail : …………………………………………………………………...…………………. 13
+   1. En cas de personne présentant des symptômes sur le lieu de travail : …………………. 13
+   2. La personne qui porte assistance se protège : …………………………………………. 13
+
+   GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   1
+3. En attendant la désinfection de la zone et avant de se déséquiper, la personne qui porte
+     assistance s’assure de : ……………………………………………………………….... 13
+4. La personne qui a porté assistance se déséquipe : ……………………………………. 14
+Références et ressources bibliographiques : ……………………………………………… 15
+
+
+
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   2
+Préambule.
+En cette période de pandémie, par le coronavirus Sars-CoV-2 responsable de la maladie
+nommée COVID-19, les lieux de travail, comme toute collectivité, sont exposés au risque
+infectieux de contamination. Cette pandémie constitue un risque biologique émergent qu’il faut
+désormais prendre en compte dans les entreprises. La priorité de ces dernières est d’adopter
+des mesures de prévention protégeant la santé de leurs collaborateurs, conformément aux
+responsabilités des employeurs, et de les inciter à veiller sur leur santé, leur sécurité et à celle
+de leur entourage. En effet, la forte densité des travailleurs dans un même site et la multiplicité
+des échanges et de contacts entre eux et avec les personnes étrangères à l’entreprise (clients,
+fournisseurs, sous-traitants, visiteurs …) constituent des facteurs favorisants la contamination.
+Ainsi, dans le cadre de la reprise de l’activité professionnelle des entreprises, des mesures
+sanitaires et spécifiques rigoureuses doivent être engagées sur les lieux du travail.
+
+Pour rappel, la « Loi n°133/AN/05/5ème L portant Code du Travail » du 28 janvier 2006 de
+la république de Djibouti, prévoit des dispositions relatives à la responsabilité de l’employeur
+en matière de protection et de prévention des travailleurs contre les risques professionnels
+(articles 121, 122 et 124, alinéa 1).
+
+Il en est de même pour le salarié qui doit appliquer de manière stricte les mesures sanitaires
+afin de préserver sa santé et celle de ses collègues (article 124, alinéa 2).
+
+Les inspecteurs du travail sont chargés de veiller à l’application des mesures préventives (article
+131).
+
+Ce guide, destiné aux entreprises, présente les mesures urgentes et spécifiques préventives à
+mettre en œuvre afin de lutter contre la propagation de la maladie et pour assurer les conditions
+sanitaires nécessaires à tout personnel appelé à travailler en bureaux, ateliers, chantier ou tout
+autres lieux en complément des mesures et recommandations édictées par les pouvoirs publics
+(Décret N°2020-80/PR/PM du 10/5/2020) et le Ministère de la santé en particulier.
+
+
+
+
+I.        Mode de transmission, durée de vie et symptomatologie de la COVID-
+19.
+
+Le Sars-Cov-2 fait partie de la grande famille des coronavirus responsables généralement de
+rhumes et de syndromes grippaux bénins. Néanmoins, ils peuvent présenter des formes graves
+en particulier chez les personnes fragiles.
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   3
+La transmission interhumaine du virus est de type gouttelettes et contact physique. La
+contamination se fait par :
+
+     •     Voie aérienne suite à un contact étroit, moins d’un mètre, et prolongé avec une personne
+           infectée ;
+     •     Contact des yeux, du nez ou de la bouche par des mains contaminés suite au contact de
+           surfaces inertes souillées par des dépôts de gouttelettes émises lors de toux ou
+           d’éternuement de la personne malade.
+
+Le virus responsable de la COVID-19 peut-être viable de quelques heures à plusieurs jours selon
+les différentes surfaces (voir tableau ci-dessous). Cependant sa viabilité diminue rapidement dès
+qu’il se dépose sur une surface. Le virus est facilement éliminé par la plupart des nettoyants et
+désinfectants réguliers en respectant les recommandations d’utilisation du fabricant.
+
+
+
+
+   Durée de vie du coronavirus
+
+  Sur l'acier inoxydable                                                                                                         2 à 3 jours
+         Sur du plastique                                                                                                        2 à 3 jours
+           Sur du carton                                          Jusqu'à 24 heures
+            Sur du cuivre            Jusqu'à 4 heures
+                Dans l'air         Jusqu'à 3 heures
+
+                             0            10             20             30            40             50             60      70          80
+
+
+Source: New England Journal of Medecine, CDC, Universités of California, LA, Princeton.
+
+
+
+
+Les symptômes de la maladie apparaissent après une période d’incubation d’environs 5 à 6
+jours. Les signes décrits sont à type de :
+
+     •     Fièvre, frissons,
+     •     Fatigue,
+     •     Toux sèche, difficultés respiratoires,
+     •     Maux de tête,
+     •     Maux de gorge,
+     •     Douleurs musculaires et articulaires,
+     •     Diarrhées,
+     •     Pertes du gout et de l’odorat.
+
+Il faut noter que la plupart des personnes infectées présentent des symptômes bénins voir sont
+asymptomatique et se rétablissent spontanément.
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE           4
+Le risque du passage à une maladie grave augmente avec l’âge, un système immunitaire
+affaiblie et des maladies chroniques qui rendent les personnes plus vulnérables.
+
+
+II.       Les intervenants et leurs rôles dans l’entreprise.
+1. Rôle de l’employeur :
+       L’employeur doit désigner une équipe de pilotage à défaut d’un comité sécurité et hygiène
+       ou d’un médecin de travail de l’entreprise qui va mener des actions pour mettre en place
+       des mesures de préventions des infections et de bonnes pratiques d’hygiène.
+       a. Informer et sensibiliser les salariés sur le risque lié au virus et les moyens de protection.
+       b. Procéder à l’évaluation du risque encouru par l’entreprise et ses salariés.
+       c. Mettre en place un plan de riposte et de prévention en fonction de l’évolution de
+            l’épidémie.
+2. Rôle du salarié :
+       a. Respecter les consignes générales émises par les autorités.
+       b. Respecter les consignes de sécurité et d’hygiène de l’entreprise.
+       c. Maintenir l’hygiène individuelle et la propreté sur le lieu de travail.
+       d. Signaler toute apparition de symptômes de la maladie.
+       e. Limiter les contacts inutiles sur le lieu de travail.
+
+
+III.      Les mesures barrières contre la COVID-19 sur tous les lieux de travail.
+
+La protection des travailleurs dépendra de la mise en place des mesures universelles de
+prévention de la transmission du COVID-19 qui s’appliquent à tous les lieux de travail et à
+toutes les personnes (employeurs, gestionnaires, travailleurs, sous-traitants, clients et visiteurs)
+qui se trouvent sur le lieu de travail
+
+1. L’hygiène des mains :
+       a. Lavage régulier des mains au savon
+            ou
+       b. Désinfection par les solutions hydroalcooliques sur des mains propres.
+       c. Le lavage ou la désinfection des mains se fait selon une technique spécifique qui sera
+            affichée au niveau des postes de lavage.
+       d. Le lavage ou la désinfection des mains se fait se fait systématiquement à la suite de
+            d’une toux, un éternuement, de crachat ou de mouchage.
+       e. Port de gants après lavage ou désinfection des mains. Néanmoins, il faut noter que
+            les gants deviennent eux-mêmes des vecteurs de transmission, aussi le risque infectieux
+
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   5
+            par le fait de porter les mains au visage est le même que sans gants. C’est pourquoi
+            le lavage des mains est la mesure prioritaire. Les gants propres jetables pourraient
+            être réservé pour les salariés de certains postes comme les guichetiers ou caissiers.
+
+
+2. L’hygiène respiratoire :
+Il faut insister sur les consignes générales d’hygiène respiratoire qui sont :
+        1. Tousser ou éternuer dans le pli du coude ou dans un mouchoir à usage unique qu’il
+              faut immédiatement jeter dans une poubelle munie d’un sachet poubelle et d’un
+              couvercle à pédale, de préférence, pour une élimination hygiénique.
+        2. Se moucher et ne cracher que dans des mouchoirs en papier à usage unique que l’on
+              jette immédiatement à la poubelle.
+        3. Éviter de se toucher le visage en particulier le nez et la bouche à mains nues ou
+              avec des gants.
+
+
+3. Les masques barrières en tissus lavable ou à usage unique :
+En matière de prévention des risques professionnels, les équipements de protection individuelle
+(EPI) comme les masques sont le dernier recours lorsqu’il est impossible de recourir à une solution
+de protection collective de nature technique (écran physique, espacement des postes de travail,
+…) ou organisationnelle (décalage des horaires, dédoublement des équipes, …) ou lorsque
+cette dernière ne suffit pas à elle seule pour protéger le travailleur. Pour faire face à la
+pandémie de COVID-19, le masque « grand public » en tissus lavable ou à usage unique ne
+peut se substituer au respect des mesures barrières. Toutefois, ce moyen de protection permet
+d’éviter la contamination de l’entourage et de l’environnement en évitant la projection de
+gouttelettes expulsées lors des toux, éternuement ou lors de la parole. Le port de masques
+requiert une certaine rigueur :
+        •     Respecter la procédure du port de masque.
+        •     Porter le masque lors du trajet du domicile à son travail, pendant la journée du travail
+              et lors du déplacement du travail vers le domicile.
+        •     La durée de l’utilisation d’un masque ne dépasse pas en générale 4 heures.
+        •     Changer de masque dès qu’il devient humide.
+        •     Pour les masques lavables, se conformer aux recommandations du fabricant pour le
+              lavage et le séchage, afin d’éviter la dégradation précoce du masque et diminuer
+              son efficacité de filtration.
+
+
+
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   6
+4. Le respect de la distanciation physique :
+       a. Introduire des mesures pour garder une distance minimale de protection sanitaire de
+            au moins 1mètre entre les salariés.
+       b. Éviter les contacts physiques (poignées de mains, embrassades, …).
+
+
+5. Désinfection régulière :
+Désinfecter régulièrement les objets manipulés et les surfaces de contact y compris les
+sanitaires.
+
+
+6. Limiter les déplacements :
+Pour faire face à une aggravation de l’épidémie, il faut limiter les déplacements au strict
+essentiel.
+
+
+IV.       Mesures organisationnelles.
+1. Gestion des ressources humaines :
+
+•     Favoriser le télétravail dans la mesure du possible ;
+•     Limiter le nombre de personnes présentes simultanément sur le lieu du travail ou dans un
+      même local en optant pour : l’aménagement horaire, le travail posté, les horaires décalés,
+      privilégier les bureaux individuels... ;
+•     Garantir une distance physique sur les lieux de travail et rester en dehors des « lieux de
+      rassemblement » autant que possible.
+•     Éviter au maximum les déplacements, les entretiens et les réunions en privilégiant
+      l’échange d’informations par téléphone, courrier électronique/fax ou des réunions
+      virtuelles même si on est dans le même bâtiment. Si vous devez organiser des réunions, il
+      faut veiller à aménager l’espace de manière à permettre une distanciation physique
+      suffisante ;
+•     Installer des distributeurs de désinfectant ou des stations de lavage des mains à des
+      endroits bien visible sur les lieux de travail.
+•     Ne pas se serrer les mains ou embrasser pour se saluer, ni d’accolade.
+•     Préférer l’utilisation des escaliers à l’ascenseur ;
+•     Limiter le nombre d’utilisateurs de l’ascenseur à 2 avec respect de la distance d’au moins
+      1mètre entre les personnes. Mettre à la disposition des employés des distributeurs de gel
+      hydro-alcoolique muraux près des ascenseurs ;
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   7
+•    Interdire les sorties des travailleurs en dehors de l’entreprise pendant les pauses.
+•    Promouvoir les bonnes pratiques en matière d’hygiène respiratoire sur le lieu de travail,
+•    Fournir des masques appropriés et mettre à disposition des mouchoirs en papier à l’usage
+     de ceux qui présentent un écoulement nasal ou une toux et des poubelles fermées.
+
+2. Mesures de prévention à l’entrée de l’entreprise :
+
+•    Éviter la bousculade et respecter la distance d'au moins 1 mètre entre les travailleurs à
+     l’entrée de l’entreprise ;
+•    Ne pas retirer son masque ;
+•    Se laver les mains avec du savon ou se désinfecter avec une solution hydro-alcoolique à
+     l’entrée de l’entreprise ;
+•    Interdire l’utilisation de tous types de pointeuses. Si la pointeuse est indispensable, et
+     notamment pour les pointeuses digitales, mettre en place un distributeur de solution de gel
+     hydro-alcoolique mural près de la pointeuse pour que le salarié puisse faire une friction
+     des mains avant de pointer.
+
+3. Mesures de prévention au niveau des vestiaires :
+
+•    Procéder à l’affichage des consignes et des règles d’hygiène à respecter à l’entrée des
+     vestiaires ;
+•    Éviter les encombrements devant les vestiaires en adoptant le marquage au sol pour le
+     respect de la distance d’au moins 1mètre entre les salariés ;
+•    Organiser l’accès alterné des salariés afin de garantir le respect de la distance de
+     sécurité d’au moins 1mètre dans les vestiaires ;
+•    Garder le port de masques dans les vestiaires ;
+•    En cas d’absence d’armoire individuelle, espacer les effets personnels des salariés d’au
+     moins 1 mètre ;
+•    Se laver les mains avec du savon ou se frictionner les mains avec du gel hydro-alcoolique
+     à l’entrée et à la sortie des vestiaires.
+
+4. Mesures de prévention au niveau des réfectoires et des lieux de pauses :
+
+    •    Éviter les files rapprochées et respecter la distance de sécurité d’au moins 1 mètre
+         entre les salariés ;
+    •    Répartir les travailleurs en plusieurs petits groupes avec des horaires de pauses
+         différents pour chaque groupe, le nombre de personnes par groupe dépend de la
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   8
+         taille de la salle de façon à respecter la distance de sécurité entre les personnes d’au
+         moins 1metre.
+   •     Les tables de repas doivent être disposées de manière à respecter la distance d’au
+         moins 1mètre entre les salariés ;
+   •     Équiper les lavabos de savon et de rouleaux de papiers jetables pour le séchage des
+         mains ;
+   •     Mettre des poubelles avec des sacs en plastiques près des lavabos ;
+   •     Se laver les mains avant de retirer le masque puis le ranger dans un sac en plastique ;
+   •     Se laver les mains avant de boire et de manger ;
+   •     Ne pas échanger les tasses, verres, assiettes ou autres ustensiles ;
+   •     Supprimer les équipements collectifs comme les réfrigérateurs, les chauffe-plats, les
+         distributeurs automatiques des boissons ;
+   •     Privilégier les repas amener de chez soi ;
+   •     Nettoyer les surfaces du sol, des armoires, des tables, des fenêtres et des poignées de
+         portes après la sortie de chaque groupe de travail ;
+   •     Aérer les locaux régulièrement.
+
+5. Salubrité de l’environnement :
+
+   •     Éviter de partager du matériel ou des équipements (ex : stylos, crayons, appareils de
+         communication, outils de travail ...) ;
+   •     Retirer les objets non essentiels (revues, journaux, décorations …) des aires communes ;
+   •     Nettoyer et désinfecter les surfaces les plus fréquemment touchées par les travailleurs
+         (poignées des portes, accoudoirs des chaises, boutons d’ascenseurs, tables, interrupteurs
+         de lumière, robinets d’eau, rampes d’escaliers, toilettes, claviers des ordinateurs, souris,
+         …) ;
+   •     Le salarié doit nettoyer et désinfecter son poste de travail au début et à la fin de sa
+         journée de travail à l’aide d’un linge imbibé par de l’eau de javel diluée ;
+   •     Nettoyer et désinfecter les vestiaires, les réfectoires et les blocs sanitaires
+         régulièrement ;
+   •     Nettoyer et désinfecter les lieux d’accueil des clients et des visiteurs au moins une fois
+         toutes les 4 heures si ce n’est plus ;
+   •     Commencer le nettoyage des zones les plus propres vers des zones les plus sales ;
+
+
+
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   9
+   •     Régler les vaporisateurs sur un jet à grosses gouttes afin de limiter la formation
+         d’aérosol de produit désinfectant pouvant être inhalé et ainsi irriter les voies
+         respiratoires ;
+   •     Équiper les lavabos de savon et de rouleaux de papiers jetables pour le séchage des
+         mains ;
+   •     Équiper les lavabos de poubelles avec des sacs en plastique en quantités suffisantes ;
+   •     Les agents de nettoyage doivent être équipés d’une tenue de travail, d’un masque et
+         de gants de nettoyage.
+
+6. Ventilation des locaux :
+
+   •     Aérer régulièrement les locaux en ouvrant les fenêtres et les portes (pendant 15
+         minutes toutes les 2 ou 3 heures ;
+   •     Garder, si possible, des sources d’aération naturelles ouvertes (fenêtres, portes, …) ;
+   •     Pour les bâtiments équipés d’un système de ventilation mécanique, maintenir la
+         ventilation en marche et fermer les portes ;
+   •     Dans le cas des bâtiments équipés d’une centrale de refroidissement, maintenir l’apport
+         d’air extérieur et arrêter si possible le recyclage d’air.
+   •     Assurer le bon fonctionnement et l’entretien des systèmes de ventilation, en fonction des
+         exigences règlementaires.
+
+7. Interaction de l’entreprise avec le milieu extérieur :
+
+   •     Établir des procédures pour l’accès des visiteurs et des clients (limitation du nombre de
+         visiteurs ou clients et des files d’attente, planification de la visite des fournisseurs,
+         signalisation et affichage des consignes générales comme les distances minimales entre
+         les personnes, mise à disposition de solutions hydro-alcooliques ......) ;
+   •     Limiter au maximum les échanges de papiers ;
+   •     Privilégier l’utilisation du téléphone ou du courrier électronique, même si les personnes
+         concernées travaillent dans le même bâtiment.
+
+
+8. Lorsque les documents papier sont requis :
+
+
+   •     Déposer les documents sur une surface propre pour les transmettre et les récupérer en
+         respectant la distance d’au moins 1 mètre entre les individus ;
+   •     Ne pas partager son stylo ;
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   10
+   •     Renforcer la distanciation physique des agents en contact avec le public par des
+         barrières physiques (en verre ou en polycarbonate) ; ces dispositifs doivent alors être
+         nettoyés fréquemment en respectant les mêmes procédures de nettoyage que les
+         autres surfaces ;
+   •     Éviter tout contact physique avec les clients ; par exemple déposer la marchandise sur
+         une surface où la personne peut la désinfecter et la récupérer, plutôt que de donner le
+         produit « de main en main ».
+
+
+9. Activités de travaux :
+
+
+   a. Mesures générales :
+   •     Limiter le nombre de personnes pour réduire les risques de rencontre et de contact.
+   •     Limiter la coactivité en réorganisant les opérations
+   •     Attribuer les outillages de façon individuelle, sauf en cas de port systématique de
+         gants de travail. Limiter le prêt de matériel entre collègues. Désinfecter le matériel
+         entre deux collègues le cas échéant
+
+
+   b. Mesures spécifiques pour les activités de travaux dans les locaux de clients :
+   •     Vérifier avec le client les conditions d’intervention permettant de respecter les
+         consignes sanitaires
+   •     Éloigner les occupants de la zone d’intervention.
+   •     Tous les consommables utilisés et souillés doivent être emportés dans un sac fermé en
+         fin de journée et en fin d’intervention.
+
+
+   c. Mesures spécifiques pour les activités de travaux chez les particuliers :
+   •     Vérifier avec le client les conditions d’intervention permettant de respecter les
+         consignes sanitaires
+   •     Éloigner les occupants de la zone d’intervention.
+   •     Tous les consommables utilisés et souillés doivent être emportés dans un sac fermé en
+         fin de journée et en fin d’intervention.
+   •     Seule une intervention indispensable et urgente au domicile d’une personne à risque ou
+         malade peut être réalisée.
+
+
+
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   11
+V.        Transport des salariés.
+1. En cas de transport par bus assuré par l’entreprise :
+     •    Prévoir un nombre suffisant de bus ;
+     •    Réduire de moitié le nombre de passagers par bus (tous les travailleurs doivent être
+          assis) ;
+     •    Informer les salariés sur les consignes et les règles d’hygiène à respecter ;
+     •    Éviter la bousculade lors de l'embarquement et de la descente des bus et respecter la
+          distance d'au moins 1 mètre entre les travailleurs ;
+     •    Se frictionner les mains par les solutions hydro-alcooliques avant la montée en bus ;
+     •    Respecter la distance d'au moins 1 mètre entre les travailleurs à l’intérieur du bus ;
+     •    Respecter la distance d'au moins 1 mètre entre les travailleurs et le chauffeur du bus ;
+     •    Port obligatoire de masque dans le bus ;
+     •    Désinfecter les bus (sol, siège, poignées des portes...) et l’aérer avant et après chaque
+          voyage de transport ;
+     •    Désinfecter régulièrement le tableau de bord, le volant et le bras de transmission du
+          bus.
+
+
+2. En cas d’utilisation de moyens de transport individuels :
+     •    Porter obligatoirement un masque ;
+     •    Ne pas dépasser 3 personnes par véhicule en cas de co-voiturage ;
+     •    Une seule personne pour les engins à deux roues.
+
+
+3. En cas de transport public :
+     •    Porter obligatoirement un masque ;
+     •    Respecter les mesures barrières et les gestes d’hygiène.
+     •    Procéder à la désinfection de l’habitacle du véhicule au départ et à l’arrivée de la
+          ligne de desserte.
+
+
+
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   12
+VI.    Conduite à tenir en cas de découverte d’un cas suspect « COVID- 19 »
+sur les lieux du travail.
+En cas de symptômes évocateurs « COVID-19 » survenant chez un salarié sur les lieux de
+travail, l’organisation de la prise en charge doit être mise en œuvre selon des procédures
+simples d’intervention établies au préalable par la cellule de crise.
+
+La procédure doit être affichée et connue de tous.
+
+1. En cas de personne présentant des symptômes sur le lieu de travail :
+   • Isoler le salarié dans un endroit défini au préalable.
+      •   L’inviter à respirer à travers un linge ou un mouchoir.
+      •   Lui faire porter un masque de type chirurgical.
+      •   Éviter tout contact étroit, ne pas la déséquiper.
+      •   Prévenir le supérieur hiérarchique et appeler le 1517.
+      •   Identifier les personnes qui ont côtoyé le salarier de façon rapprochée (1 mètre) et
+          prolongée (+ de 15 minutes) depuis l’apparition des symptômes et dans les 24 heures
+          qui les précèdent.
+      •   Éloigner les autres personnes
+
+2. La personne qui porte assistance se protège :
+      •   Porter des lunettes de protection, des gants jetables et un masque chirurgical ou type
+          FFP2
+      •   Se laver les mains avec eau et savon ou solution hydroalcoolique.
+      •   Nettoyer et désinfecter les surfaces en contact.
+      •   Réserver un sac à déchets.
+
+
+3. En attendant la désinfection de la zone et avant de se déséquiper, la personne qui
+      porte assistance s’assure de :
+      •   Signaler et matérialiser chaque surface qui a été souillée.
+      •   Déterminer avec le gestionnaire du lieu du travail les installations à neutraliser
+          (climatisation, ventilation, escalier …).
+      •   Condamner par précaution les locaux non techniques (toilettes, salle de pause, etc …).
+
+
+
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   13
+4. La personne qui a porté assistance se déséquipe :
+   •     Se munir d’un sac à déchets en plastique.
+   •     Retirer ses lunettes de protection.
+   •     Retirer le masque.
+   •     Retirer les gants en veillant à ne pas toucher la surface extérieure.
+   •     Mettre le tout dans le sac en plastique et le fermer.
+   •     Mettre le sac dans un autre sac en plastique et fermer se dernier.
+   •     Abandonner le tout sur place jusqu’à la désinfection.
+   •     Se laver ou se frictionner les mains avec la solution hydroalcoolique.
+
+
+
+
+GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   14
+Références et ressources bibliographiques :
+
+1- Loi N°133/AN/05/5èmedu 28 janvier 2006 portant code du travail.
+2- Décret N°2020-63/PRMTRA, instituant des mesures exceptionnelles durant la pandémie du
+    coronavirus Covid-19, 23 mars 2020.
+3- Décret N°2020-80/PR/PM, portant levée partielle des mesures exceptionnelles de
+    prévention contre la propagation du COVID-19, 10 mai 2020.
+4- Directives Nationale de Prise en Charge COVID-19. Ministère de la Santé. République de
+    Djibouti. Mars 2020.
+5- Protocole national de déconfinement pour les entreprises pour assurer la santé et la sécurité
+    des salariés. Ministère du travail. République Française, 9 mai 2020.
+6- Prévention et limitation de la propagation du COVID-19 au travail. Check-list des mesures à
+    prendre. Organisation internationale du travail, 9 mai 2020.
+7- Guidance on Preparing Workplace for COVID-19. OSHA 3990-03 2020.
+8- Fiches conseils métiers et guide pour les salariés et les employeurs. Disponible sur le lien :
+    https://travail-emploi.gouv.fr/le-ministère-en-action/coronavirus-covid-19/proteger-les-
+    travailleurs/article/fiches-conseils-metiers-et-guides-pour-les-salaries-et-les-employeurs.
+9- Recommandations intérimaires concernant les marchés d’alimentation et commerces essentiels.
+    Institut Nationale de Santé Publique du Québec, 27 mars 2020.
+10- COVID-19 : Mesures de prévention en milieu de travail : recommandations intérimaires.
+    Institut Nationale de Santé Publique du Québec, 5 avril 2020.
+11- Recommandations pour réduire l’exposition et la contamination des travailleurs dans les
+    commerces essentiels [en ligne]. Institut de Recherche Robert-Sauvé en santé et sécurité du
+    travail. Version du 27mars 2020. Disponible sur le lien : https://www.irsst.qc.ca/covid-
+    19/avis-irsst/id/2651/recommandations-pour-reduire-lexpositionn-et-la-contamination-des-
+    travailleurs-dans-les-commerces-essentiels
+12- Safety and Health Topics/ COVID-19. Occupational Safety and Health Administration.
+    UNITED STATES DEPARTMENTOF LABOR, 2020. Disponible sur le lien :
+    https://www.osha.gov/SLTC/covid-19/controlprevention.html
+13- COVID-19 : Retour sur le lieu de travail – Adapter les lieux de travail et protéger les
+    travailleurs. Agence européenne pour la santé et la sécurité au travail, 2020.
+14- Gestion des lieux de travail en période de COVID-19 : guide de l’employeur. Genève :
+    Bureau international du Travail, 2020.
+15- Getting your workplace ready for COVID-19: How COVID-19 spreads, 19 march 2020.
+    World Health Organization. Disponible sur le lien:
+    https://apps.who.int/iris/handle/10665/331584
+16- World Health Organization (2020). Consideration for public health and social measures in
+    the workplace in the context of COVID-19: annex to considerations in adjusting public
+    health and social measures in the context of COVID-19, 10 May 2020. World Health
+    Organization. https://apps.who.int/iris/handle/10665/332050. License: CCBY-NC-SA 3.0
+    IGO
+17- Prise en charge en urgence d’un salarié avec suspicion d’une symptomatologie COVID-19.
+    Descatha A, Fadel M, Baer M, Havette P, Letheux C, Savary D. Arch Mal Prof Environ.
+    Disponible sur le lien:
+    https://www.sciencedirect.com/science/article/pii/S1775878520309474
+
+
+
+
+ GUIDE DES MESURES PREVENTIVES CONTRE LA COVID-19 POUR LA CONTINUITE DES ACTIVITES PROFESSIONNELLES EN PERIODE D’EPIDEMIE   15
+

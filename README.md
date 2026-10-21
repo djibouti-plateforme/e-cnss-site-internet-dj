@@ -2,7 +2,16 @@
 
 Réplique statique de la page d'accueil de [cnss.dj](https://cnss.dj/) intégrant le widget de l'**Assistant CNSS**, pour illustrer le projet décrit dans le cahier des charges DSI-DAT-CDC-003.
 
-> ⚠️ Maquette de démonstration : les réponses sont **simulées dans le navigateur** à partir d'extraits des pages publiques de cnss.dj. Aucun modèle de langage ni serveur n'est appelé.
+> ⚠️ Maquette de démonstration : les réponses sont produites **dans le navigateur**, sans modèle de langage ni serveur. Le chatbot répond à partir d'un **corpus réel** de 112 documents (site cnss.dj, PDF officiels, profil AISS) : voir [`corpus/README.md`](corpus/README.md).
+
+## Comment le chatbot répond
+
+1. **Garde-fous** : détournement, dossier personnel, données personnelles masquées.
+2. **Réponse validée** : pour les questions types du cahier des charges (retraite, famille, maternité, AT/MP, cotisations), une réponse rédigée et sourcée (`assets/js/kb.js`).
+3. **Réponse extraite du corpus** : pour toute autre question, recherche BM25 dans les 485 passages (`assets/js/rag.js`). Les meilleurs extraits sont affichés avec leurs sources et un lien vers le PDF du corpus.
+4. **Pas d'invention** : si aucun passage ne couvre la question, l'assistant le dit et oriente vers la CNSS.
+
+Les boutons de thème (Tout, Retraite, Famille, Maternité, AT/MP) limitent la recherche au thème choisi et proposent des questions types.
 
 ## Ce que montre la démo
 

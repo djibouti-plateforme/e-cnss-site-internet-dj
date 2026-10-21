@@ -1,0 +1,17 @@
+# AMU — l'essentiel à savoir (dépliant)
+@titre: AMU — l'essentiel à savoir (dépliant)
+@type: Brochure
+@prestation: amu
+@reference: Dépliant CNSS « AMU, l'essentiel à savoir » (transcription d'un document scanné)
+@url: https://cnss.dj/storage/2022/03/depliant_AMU.pdf
+@date: 2022-03
+@statut: En vigueur — à confirmer par le référent
+
+## AMU — l'essentiel à savoir (dépliant)
+AMU — Assurance Maladie Universelle : l'essentiel à savoir (dépliant CNSS).
+Les 4 principes fondamentaux de l'AMU : 1. Contribution ; 2. Solidarité ; 3. Équité ; 4. Mutualisation.
+Qu'est-ce que l'Assurance Maladie Universelle ? Le système d'assurance maladie universelle offre une couverture médicale à toute la population vivant sur le territoire de la République de Djibouti. Il se compose de deux régimes : 1. le régime contributif d'assurance maladie obligatoire (AMO) ; 2. le programme d'assistance sociale de santé (PASS) pour les personnes sans revenu. L'AMO concerne les salariés, fonctionnaires, députés, membres du gouvernement, conventionnés, travailleurs indépendants, retraités et étudiants. Le PASS concerne les personnes sans revenu, ainsi que le conjoint, les enfants mineurs et les enfants handicapés.
+Quelles sont les prestations de soins de santé de l'AMU ? Le paquet universel est constitué des prestations de soins dispensées par les centres de santé communautaires tel que le programme élargi de vaccination, les consultations des enfants de moins de 5 ans, la santé de la reproduction (consultations pré et postnatales) et les examens y compris l'échographie et le planning familial, les prises en charge des maladies telles que la tuberculose, le paludisme, les épidémies et problèmes de santé publique. Un paquet de base 1 composé des prestations de soins de base telles que les consultations (enfants et adultes) par un généraliste, un bilan standard, les examens de radiologie et la délivrance de médicaments essentiels ainsi que l'accouchement simple y compris la césarienne. Un paquet de base 2 constitué des consultations curatives (enfants et adultes), des médicaments (génériques de la liste nationale des médicaments essentiels) et de toutes les analyses médicales prescrites par les médecins spécialistes. Hospitalisations et opérations chirurgicales.
+Quelles sont les modalités de prise en charge ? Les frais relatifs aux soins des bénéficiaires de l'AMU sont pris en charge par la CNSS selon deux modes : soit directement aux prestataires de soins sur la base d'un système de tiers payant prévu par une convention signée entre la CNSS et l'organisme prestataire de soins ; soit en procédant au remboursement des frais aux bénéficiaires. Attention : les prestations garanties au titre de l'assurance maladie obligatoire ne peuvent être remboursées ou prises en charge que si les soins ont été prescrits et exécutés par des organismes prestataires conventionnés (ex. Hôpital Al Rahma, Hôpital de Balbala…).
+Le financement du régime PASS : ce régime est le volet solidaire de l'AMU. Il est financé par une subvention de l'État et de la CNSS et géré par le Fonds de Solidarité de l'Assurance Maladie Universelle (FSAMU).
+Contact : Boulevard de la République, BP 696, Djibouti. Tél : 21 35 03 21 — Fax : 21 35 58 32. Numéro vert : 114. www.cnss.dj

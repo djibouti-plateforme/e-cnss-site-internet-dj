@@ -1,0 +1,27 @@
+# Les différents taux de cotisation applicables
+@titre: Les différents taux de cotisation applicables
+@type: Barème
+@prestation: employeur
+@reference: Document CNSS « taux_applicables » (transcription d'un document scanné)
+@url: https://cnss.dj/storage/2022/03/taux_applicables.pdf
+@date: 2022-03
+@statut: En vigueur — à confirmer par le référent
+
+## Taux de cotisation du régime général (salariés)
+- Prestations familiales : part patronale 5,5 % ; part salariale néant ; total 5,5 %.
+- Accident de travail : part patronale 1,2 % ; part salariale néant ; total 1,2 %.
+- Retraite : part patronale 4 % ; part salariale 4 % ; total 8 %.
+- Assurance maladie obligatoire (soins) : part patronale 5 % ; part salariale 2 % ; total 7 %.
+- Total des taux de cotisation du régime général : part patronale 15,7 % ; part salariale 6 % ; total 21,7 %.
+## Taux de cotisation du régime zone franche
+- Prestations familiales : néant.
+- Accident de travail : part patronale 1,2 % ; total 1,2 %.
+- Retraite : part patronale 4 % ; part salariale 4 % ; total 8 %.
+- Assurance maladie obligatoire (soins) : part patronale 5 % ; part salariale 2 % ; total 7 %.
+- Total zone franche : part patronale 10,2 % ; part salariale 6 % ; total 16,2 %.
+## Taux de cotisation des travailleurs indépendants
+- Assurance maladie obligatoire (soins) : 7 % (à la charge du travailleur indépendant). Total 7 %.
+## Taux de cotisation des régimes particuliers (fonctionnaires, FNP, députés)
+- Régime des fonctionnaires : part employeur 19 % (dont 14 % pour la vieillesse et 5 % pour les soins), part de l'agent 8 % (dont 6 % vieillesse et 2 % soins), soit 27 % au total.
+- Régime FNP : part employeur 20 % (dont 15 % vieillesse et 5 % soins), part de l'agent 9 % (dont 7 % vieillesse et 2 % soins), soit 29 % au total.
+- Régime des députés et membres du gouvernement : part employeur 24 % (dont 19 % vieillesse et 5 % soins), part de l'intéressé 19 % (dont 17 % vieillesse et 2 % soins), soit 43 % au total.

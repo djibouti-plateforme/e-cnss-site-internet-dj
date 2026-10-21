@@ -4,6 +4,7 @@
 // En production, `answer()` sera remplacé par un appel à l'API du chatbot.
 (function () {
   const KB = window.CNSS_KB;
+  const RAG = window.CNSS_RAG;
   const $ = (id) => document.getElementById(id);
 
   // Le widget est injecté par ce script : le même code sert le site, la page dédiée et l'app mobile.
@@ -74,6 +75,17 @@
 
   const CONTACT = 'au <strong>+253 21 35 03 21</strong> ou à un guichet de la CNSS (Boulevard de la République, dim.–jeu. 8h–17h)';
   const DISCLAIMER = 'ℹ️ Information indicative, fondée sur la documentation officielle de la CNSS. Elle ne remplace pas la décision de la CNSS.';
+
+  const THEME_PDF = { retraite: 'corpus/pdf/01-retraite.pdf', famille: 'corpus/pdf/02-prestations-familiales.pdf', maternite: 'corpus/pdf/03-maternite.pdf', atmp: 'corpus/pdf/04-accidents-du-travail.pdf' };
+  const THEME_Q = {
+    all: ['À quelle pension de retraite puis-je prétendre ?', 'Quel est le taux de cotisation ?', 'Comment obtenir la carte de sécurité sociale ?', 'Quelle est la durée du congé de maternité ?'],
+    retraite: ['À quel âge puis-je partir à la retraite ?', 'Quels documents fournir pour ma pension ?', 'Quand la pension est-elle payée ?', 'Qui a droit à la pension de réversion ?'],
+    famille: ['Combien sont les allocations familiales ?', 'Quelles pièces pour les allocations familiales ?', "Qui a droit à l'allocation de mariage ?"],
+    maternite: ['Quelle est la durée du congé de maternité ?', "Comment est payée l'allocation de maternité ?", 'Quelles pièces pour le congé maternité ?'],
+    atmp: ['Comment déclarer un accident de travail ?', "Quelles indemnités en cas d'accident de travail ?", 'Comment déclarer une maladie professionnelle ?'],
+    amu: ['Qui est couvert par l\'AMU ?', 'Comment obtenir la carte de sécurité sociale ?'],
+  };
+  const SCOPE_LABEL = { all: 'Tous les thèmes', retraite: 'Retraite (Volet 1)', famille: 'Prestations familiales (Volet 2)', maternite: 'Maternité (Volet 2)', atmp: 'Accidents du travail et maladies professionnelles (Volet 2)' };
 
   const state = { lastGroup: null, scope: 'all', busy: false, started: false, debug: false };
 
@@ -167,32 +179,74 @@
 
     let group = findKey(n, KB.groups);
     const intent = findKey(n, KB.intents);
-
-    if (group === 'amu') {
-      return { kind: 'scope', reason: 'amu', text: `Les questions sur l'**Assurance Maladie Universelle (AMU)** ne sont pas encore couvertes par l'assistant.\n\nConsultez la rubrique « Assurance Maladie Universelle » du site ou contactez la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?'] };
-    }
-    if (RX.notCovered.test(n)) {
-      return { kind: 'scope', reason: 'absent', text: `Je ne trouve pas cette information dans la documentation officielle dont je dispose. Plutôt que de risquer une réponse inexacte, je vous invite à contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?'] };
-    }
-
+    const found = RAG ? RAG.search(question, state.scope) : null;
+    const corpusOk = !!found && RAG.covered(found);
     let usedContext = false;
-    if (!group && intent && state.lastGroup) { group = state.lastGroup; usedContext = true; }
-    if (!group && state.scope !== 'all' && (intent || RX.domain.test(n))) group = KB.defaultForScope[state.scope];
-    if (!group && intent && RX.domain.test(n)) group = 'retraite';
-    if (!group) {
-      if (RX.domain.test(n) || intent) {
-        return { kind: 'scope', reason: 'absent', text: `Je ne trouve pas d'information correspondant à votre question dans la documentation officielle. Pouvez-vous reformuler ? Vous pouvez aussi contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?', 'Combien sont les allocations familiales ?'] };
-      }
-      return { kind: 'scope', reason: 'hors-perimetre', text: "Je suis l'assistant de la CNSS : je réponds uniquement aux questions sur les **prestations sociales** (retraite, prestations familiales, maternité, accidents du travail). Que souhaitez-vous savoir ?", chips: ['À quelle pension de retraite puis-je prétendre ?', 'Comment déclarer un accident de travail ?'] };
-    }
 
-    const routes = KB.route[group];
-    const id = (intent && routes[intent]) || routes._;
+    // Question de suivi (« quelles pièces ? ») : on reprend le sujet précédent.
+    if (!group && intent && state.lastGroup && !residual(question, null, intent).length) { group = state.lastGroup; usedContext = true; }
+    if (!group && state.scope !== 'all' && intent && !residual(question, null, intent).length) group = KB.defaultForScope[state.scope];
+    const routes = group && KB.route[group];
+    const rid = routes && ((intent && routes[intent]) || routes._);
+
+    if (rid) {
+      if (RX.simulation.test(n) && KB.route[group].calcul) return curated(group, intent, KB.route[group].calcul, n, usedContext);
+      const rest = residual(question, group, intent);
+      // La question ne parle que du sujet de la réponse type : réponse validée.
+      if (!rest.length || usedContext) return curated(group, intent, rid, n, usedContext);
+      // Sinon, la réponse type n'est retenue que si elle couvre la question au moins aussi bien que le corpus.
+      const curatedCov = coverageOf(question, entryText(group, intent, KB.entries[rid]));
+      if (corpusOk && found.coverage > curatedCov) return corpusAnswer(question, found);
+      if (curatedCov >= 0.6) return curated(group, intent, rid, n, usedContext);
+    }
+    if (corpusOk) return corpusAnswer(question, found);
+    if (RX.domain.test(n) || intent || group) {
+      return { kind: 'scope', reason: 'absent', found, text: `Je ne trouve pas cette information dans la documentation officielle dont je dispose. Plutôt que de risquer une réponse inexacte, je vous invite à reformuler ou à contacter la CNSS ${'{CONTACT}'}.`, chips: ['À quelle pension de retraite puis-je prétendre ?', 'Quel est le taux de cotisation ?'] };
+    }
+    return { kind: 'scope', reason: 'hors-perimetre', found, text: "Je suis l'assistant de la CNSS : je réponds uniquement aux questions sur la **sécurité sociale à Djibouti** (retraite, prestations familiales, maternité, accidents du travail, assurance maladie, cotisations). Que souhaitez-vous savoir ?", chips: ['À quelle pension de retraite puis-je prétendre ?', 'Comment déclarer un accident de travail ?'] };
+  }
+
+  // Questions où le corpus est plus précis que les réponses rédigées (cotisations, employeurs, AMU…).
+  const CORPUS_FIRST = /employeur declar|immatricul|zone franche|fonctionnaire|amu|amo|pass |carte|etudiant|penalit|plafond|myafia|paternit|funera|carence|rente|deces|etranger/;
+  // Termes de la question qui ne relèvent ni du sujet, ni de l'intention détectés.
+  const FILLER = 'pension retraite allocation allocations prestation prestations conge travail demande dossier numero telephone tel masque droit obtenir avoir parle moi explique informations info';
+  function residual(question, group, intent) {
+    if (!RAG) return [];
+    const known = new Set(RAG.tokens([FILLER, (KB.groups[group] || []).join(' '), intent ? KB.intents[intent].join(' ') : ''].join(' ')));
+    return RAG.tokens(question.replace(/⟦.+?⟧/g, ' ')).filter((t) => !known.has(t));
+  }
+
+  // Texte d'une réponse type + mots-clés qui y mènent (pour juger si elle couvre la question).
+  const entryText = (group, intent, entry) => [entry.text, (KB.groups[group] || []).join(' '), intent ? KB.intents[intent].join(' ') : ''].join(' ');
+  function coverageOf(question, text) {
+    if (!RAG) return 0;
+    const q = [...new Set(RAG.tokens(question))];
+    const t = new Set(RAG.tokens(text));
+    return q.length ? q.filter((x) => t.has(x)).length / q.length : 0;
+  }
+
+  function curated(group, intent, id, n, usedContext) {
     const entry = KB.entries[id];
     state.lastGroup = group;
     const note = RX.simulation.test(n) && id !== 'r-calcul'
       ? "\n\nℹ️ Je ne réalise pas de simulation personnalisée : pour votre montant exact, adressez-vous à un guichet de la CNSS." : '';
-    return { kind: 'rag', reason: 'rag', group, intent, id, entry, usedContext, text: entry.text + note, chips: entry.followups };
+    return { kind: 'rag', reason: 'rag', source: 'redigee', group, intent, id, entry, usedContext, text: entry.text + note, chips: entry.followups };
+  }
+
+  const PRESTA_THEME = { retraite: 'retraite', famille: 'famille', maternite: 'maternite', atmp: 'atmp' };
+  const PRESTA_GROUP = { retraite: 'retraite', famille: 'famille', maternite: 'maternite', atmp: 'at' };
+  function corpusAnswer(question, found) {
+    const c = RAG.compose(question, found);
+    const top = c.chosen[0].p.doc;
+    const label = (RAG.meta.prestations || {})[top.prestation] || top.prestation;
+    if (PRESTA_GROUP[top.prestation]) state.lastGroup = PRESTA_GROUP[top.prestation];
+    let text = c.text;
+    if (top.volet === 'Hors périmètre CDC') text += `\n\nℹ️ Le thème « ${label} » n'est pas dans le périmètre des volets 1 et 2 du projet : réponse affichée à titre de démonstration.`;
+    const entry = {
+      theme: PRESTA_THEME[top.prestation] || top.prestation, volet: top.volet, label,
+      sources: c.chosen.map((r) => ({ doc: r.p.doc.titre, ref: r.p.section !== r.p.doc.titre ? r.p.section : r.p.doc.type, version: (r.p.doc.date || 'non daté') + ' · ' + r.p.doc.type, statut: r.p.doc.statut, url: r.p.doc.url, pdf: r.p.doc.pdf, score: r.score / (r.score + 6) })),
+    };
+    return { kind: 'rag', reason: 'rag', source: 'corpus', id: 'corpus:' + c.chosen[0].p.id, entry, found, chosen: c.chosen, text, chips: THEME_Q[PRESTA_THEME[top.prestation] || 'all'].slice(0, 2) };
   }
 
   // ---------- affichage ----------
@@ -235,10 +289,11 @@
 
   function sourcesHtml(entry, id) {
     const items = entry.sources.map((s, k) => {
-      const score = (0.93 - k * 0.07 - (id.length % 3) * 0.01).toFixed(2);
+      const score = (s.score || 0.93 - k * 0.07 - (id.length % 3) * 0.01).toFixed(2);
+      const pdf = s.pdf || THEME_PDF[entry.theme];
       return `<div class="cb-src"><b>${esc(s.doc)}</b>${esc(s.ref)}
         <div class="meta"><span>Version : ${esc(s.version)}</span><span class="ok">● ${esc(s.statut)}</span>
-        <a href="${s.url}" target="_blank" rel="noopener">Voir la page ↗</a><span class="score">pertinence ${score}</span></div></div>`;
+        ${s.url ? `<a href="${s.url}" target="_blank" rel="noopener">Source ↗</a>` : ''}${pdf ? `<a href="${pdf}" target="_blank" rel="noopener">PDF du corpus ↗</a>` : ''}<span class="score">pertinence ${score}</span></div></div>`;
     }).join('');
     return `<details class="cb-sources"><summary>Sources (${entry.sources.length})</summary>${items}</details>`;
   }
@@ -273,19 +328,30 @@
     if (res.kind === 'rag') {
       t.embed = rnd(60, 130); t.search = rnd(25, 70); t.llm = rnd(1700, 3600);
       total += t.embed + t.search + t.llm;
-      const others = Object.entries(KB.entries).filter(([k, e]) => k !== res.id && e.theme === res.entry.theme).slice(0, 2);
-      const top = 0.86 + Math.random() * 0.08;
-      const passages = [[res.entry.sources[0].doc, res.entry.sources[0].ref, plain(res.entry.text), top]]
-        .concat(others.map(([, e], i) => [e.sources[0].doc, e.sources[0].ref, plain(e.text), top - 0.12 - i * 0.07]));
+      const f = res.found || (RAG ? RAG.search(masked, state.scope) : null);
+      let passages;
+      if (f && f.results.length) {
+        passages = f.results.slice(0, 5).map((r) => [r.p.doc.titre, r.p.section !== r.p.doc.titre ? r.p.section : r.p.doc.type, r.p.texte.replace(/\n/g, ' '), r.score / (r.score + 6)]);
+      } else {
+        const others = Object.entries(KB.entries).filter(([k, e]) => k !== res.id && e.theme === res.entry.theme).slice(0, 2);
+        const top = 0.86 + Math.random() * 0.08;
+        passages = [[res.entry.sources[0].doc, res.entry.sources[0].ref, plain(res.entry.text), top]]
+          .concat(others.map(([, e], i) => [e.sources[0].doc, e.sources[0].ref, plain(e.text), top - 0.12 - i * 0.07]));
+      }
       const ab = ABROGES[res.entry.theme];
       rows.push(['③', 'Vectorisation', 'Question convertie en vecteur (modèle d\'embeddings multilingue — choix au jalon J1)', t.embed]);
-      rows.push(['④', 'Recherche (Chroma)', 'Top-5 passages · filtre <code>statut = en vigueur</code>' +
+      rows.push(['④', 'Recherche (BM25 → Chroma en production)', `${RAG ? RAG.meta.passages + ' passages · ' + RAG.meta.documents + ' documents · ' : ''}top-5 · thème : ${esc(SCOPE_LABEL[state.scope])}` + (res.source === 'redigee' ? ' · <b>réponse validée prioritaire</b>' : '') +
         '<div class="cb-passages">' + passages.map(([d, r, x, sc]) => `<div class="cb-pass"><span class="sc">${sc.toFixed(2)}</span><b>${esc(d)}</b> <i>${esc(r)}</i><br>« ${esc(cut(x, 120))} »</div>`).join('') +
         (ab ? `<div class="cb-pass ex"><span class="sc">exclu</span><b>${esc(ab.doc)}</b><br>Texte abrogé, remplacé par la ${esc(ab.by)} : écarté de la réponse (EF-15).</div>` : '') + '</div>', t.search]);
       rows.push(['⑤', 'Modèle de langage', 'Consigne : <i>« Réponds uniquement à partir des passages fournis, en français simple, cite tes sources ; si l\'information est absente, dis-le. »</i> · température 0,1 · ~' + rnd(380, 720) + ' jetons', t.llm]);
       rows.push(['⑥', 'Contrôles de sortie', 'Source citée ✓ · Date de version ✓ · Avertissement EF-05 ✓', 0]);
     } else if (res.reason !== 'accueil') {
-      rows.push(['—', 'Arrêt', res.reason === 'absent' ? 'Recherche effectuée, aucun passage au-dessus du seuil : <b>aucun appel au modèle</b>, réponse de repli.' : 'Chaîne interrompue avant la recherche : <b>aucun appel au modèle</b>.', 0]);
+      const f = res.found;
+      if (f && f.results.length && (res.reason === 'absent' || res.reason === 'hors-perimetre')) {
+        const r0 = f.results[0];
+        rows.push(['④', 'Recherche', `Meilleur passage : <b>${esc(r0.p.doc.titre)}</b> — pertinence ${(r0.score / (r0.score + 6)).toFixed(2)}, couverture de la question ${Math.round(f.coverage * 100)} % (seuil 75 %)`, rnd(25, 70)]);
+      }
+      rows.push(['—', 'Arrêt', res.reason === 'absent' || res.reason === 'hors-perimetre' ? 'Aucun passage suffisamment pertinent : <b>aucun appel au modèle</b>, réponse de repli (pas d\'invention, EF-02).' : 'Chaîne interrompue avant la recherche : <b>aucun appel au modèle</b>.', 0]);
     }
     const ok = total < 10000;
     const html = `<details class="cb-trace" open><summary>Sous le capot — temps total ${(total / 1000).toFixed(1).replace('.', ',')} s <span class="${ok ? 'ok' : 'warn'}">${ok ? '✓ < 10 s (ENF-02)' : '⚠ > 10 s'}</span></summary>` +
@@ -333,7 +399,7 @@
     };
     await step('Vérification de la question (garde-fous)…', 450);
     if (res.kind === 'rag') {
-      await step(`Recherche dans le corpus officiel — ${res.entry.sources.length + 3} passages analysés…`, 650);
+      await step(`Recherche dans le corpus officiel — ${RAG ? RAG.meta.passages : res.entry.sources.length + 3} passages analysés…`, 650);
       await step('Rédaction de la réponse sourcée…', 550);
     }
 
@@ -342,12 +408,17 @@
     if (state.debug) html += trace.html;
     if (found) html += '<p class="cb-disclaimer">🔒 Vous avez saisi une donnée personnelle : elle a été masquée et ne sera pas conservée. Inutile de la communiquer pour obtenir une information.</p>';
     if (res.kind === 'rag') {
-      html += res.entry.volet === 1
-        ? '<span class="cb-volet">RETRAITE · VOLET 1</span>'
-        : '<span class="cb-volet v2">VOLET 2 · APERÇU</span>';
+      if (res.source === 'corpus') {
+        html += `<span class="cb-volet corpus">EXTRAIT DU CORPUS · ${esc(res.entry.label.split(' (')[0].toUpperCase())} · ${esc(res.entry.volet.toUpperCase())}</span>`;
+      } else {
+        html += res.entry.volet === 1 ? '<span class="cb-volet">RETRAITE · VOLET 1 · RÉPONSE VALIDÉE</span>'
+          : res.entry.volet === 2 ? '<span class="cb-volet v2">VOLET 2 · RÉPONSE VALIDÉE</span>'
+            : '<span class="cb-volet corpus">COTISATIONS · HORS PÉRIMÈTRE CDC · DÉMONSTRATION</span>';
+      }
       if (res.usedContext) html += '<p style="font-size:.8em;color:#8a9bb0;margin:0 0 6px">↪ Suite de la conversation précédente</p>';
     }
     html += md(res.text.replace(/\{CONTACT\}/g, '§CONTACT§')).replace(/§CONTACT§/g, CONTACT);
+    if (res.source === 'corpus') html += '<p class="cb-note">Réponse composée d\'extraits des documents officiels. Dans la version finale, le modèle de langage les reformulera en une réponse rédigée.</p>';
     if (res.kind === 'rag') html += sourcesHtml(res.entry, res.id) + `<p class="cb-disclaimer">${DISCLAIMER}</p>` + feedbackHtml(logId);
 
     await reveal(bubble, html);
@@ -368,7 +439,7 @@
     const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
     log.push({
       id, ts: new Date().toISOString(), canal: CHANNEL, question: masked, kind: res.kind, reason: res.reason,
-      theme: res.entry ? res.entry.theme : null, reponse: res.id || null, pii: found, contexte: !!res.usedContext,
+      theme: res.entry ? res.entry.theme : null, reponse: res.id || null, source: res.source || null, scope: state.scope, pii: found, contexte: !!res.usedContext,
       latence: latency, feedback: null,
     });
     store.set(LOG_KEY, log.slice(-300));
@@ -437,10 +508,21 @@
   debugBtn.addEventListener('click', () => setDebug(!state.debug));
   setDebug(/[?&]capot=1/.test(location.search) || store.get('cnss-cb-debug') === true);
 
+  // Boutons de thème : limitent la recherche au thème choisi et proposent des questions types.
   panel.querySelectorAll('.cb-scope').forEach((b) => b.addEventListener('click', () => {
-    panel.querySelectorAll('.cb-scope').forEach((x) => x.classList.toggle('active', x === b));
+    if (state.busy) return;
+    panel.querySelectorAll('.cb-scope').forEach((x) => { x.classList.toggle('active', x === b); x.setAttribute('aria-pressed', x === b); });
     state.scope = b.dataset.scope;
     state.lastGroup = state.scope === 'all' ? null : KB.defaultForScope[state.scope];
+    if (!state.started) { state.started = true; welcome(); }
+    body.querySelectorAll('.cb-chips').forEach((c) => c.remove());
+    const n = RAG ? RAG.count(state.scope) : null;
+    const txt = state.scope === 'all'
+      ? `📂 **Tous les thèmes** : je cherche à nouveau dans l'ensemble du corpus${n ? ` (${n} documents)` : ''}.`
+      : `📂 Thème **${SCOPE_LABEL[state.scope]}** sélectionné : je cherche uniquement dans les documents de ce thème${n ? ` (${n} documents)` : ''}. Posez votre question ou choisissez :`;
+    addBot(md(txt));
+    addChips(THEME_Q[state.scope]);
+    input.focus();
   }));
 
   body.addEventListener('click', (e) => {

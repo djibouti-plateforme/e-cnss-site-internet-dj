@@ -148,3 +148,8 @@
 .cb-pass i { color: #8fa6c2; }
 .cb-pass.ex { opacity: .75; text-decoration: none; border: 1px dashed #ffc46b; }
 .cb-pass.ex .sc { background: #ffc46b; }
+
+.cb-volet.corpus { background: #fff3e0; color: #a35a00; }
+.cb-note { font-size: .78em; color: #6b7a90; background: #f2f5fb; border-radius: 6px; padding: 5px 8px; margin: 8px 0 0; }
+.cb-src a { margin-right: 8px; }
+.cb-scope[aria-pressed="true"] { box-shadow: 0 0 0 2px rgba(31,58,95,.15); }

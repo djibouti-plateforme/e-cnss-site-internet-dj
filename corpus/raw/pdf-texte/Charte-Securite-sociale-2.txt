@@ -1,0 +1,130 @@
+1. Préambule
+
+Dans le cadre de ses initiatives pour améliorer et faciliter ses services, la CNSS a mis en œuvre
+un nouvel outil de communication électronique. Disponible en français, l'application de sécurité
+sociale (CNSS & Moi) est une solution moderne et pratique pour les assurés sociaux et les
+employeurs. Elle offre un accès rapide et facile aux informations cruciales sur la sécurité sociale,
+tout en assurant une transparence complète sur les cotisations. Grâce à cette application, les
+utilisateurs peuvent suivre leur compte en temps réel et accéder aux données concernant leurs
+cotisations, leurs droits et leurs prestations. Les informations peuvent être consultées à tout
+moment et depuis n'importe où, ce qui en fait un outil précieux pour les travailleurs indépendants,
+les employés et les retraités. La sécurité et la protection de la vie privée des utilisateurs sont une
+priorité absolue pour la Caisse nationale de sécurité sociale et notamment dans cette application,
+qui offre un niveau élevé de sécurité pour les informations sensibles. En résumé, l'application de
+sécurité sociale sur Android et ios est un outil incontournable pour les assurés sociaux, les
+employeurs locaux, offrant une valeur ajoutée en termes d'accès rapide et facile aux informations
+sur la couverture sociale.
+
+La Charte de confidentialité en vigueur a pour but de fixer les règles d'accès et d'utilisation des
+services proposés par l'application aux clients et à leurs affiliées. Seuls les employeurs enregistrés
+auprès de la caisse nationale de sécurité sociale, ainsi que leurs affiliées, peuvent utiliser cette
+solution.
+
+L'application fournit à ses utilisateurs les informations définies dans l'Article 3 de la Loi
+n°212/AN/07/5ème L, créant la Caisse Nationale de Sécurité Sociale (C.N.S.S).
+
+   ➔ Les allocations familiales et les allocations de mariage :
+   ➔ Les prestations à court terme :
+         ◆ indemnités journalières
+         ◆ allocations en cas de décès
+   ➔ Les prestations à long terme :
+         ◆ Prestations de soins
+         ◆ Pension d'invalidité
+         ◆ Pension de vieillesse
+         ◆ Pension de réversion
+
+Objectif de la charte : La présente charte a pour objet de définir les règles d'utilisation de
+l'application de sécurité sociale (CNSS & Moi), en vue de garantir la protection des données
+personnelles des utilisateurs et la sécurité des informations sensibles.
+
+Règles d’accès: Dans le cadre de l’utilisation de l’application (Cnss&Moi), chaque utilisateur
+dispose d’un accès qui est composé d’un identifiant et d’un mot de passe, qui lui sont
+communiqués après la signature de la Charte. Afin de garantir la confidentialité des informations
+de chacun, ces accès sont strictement personnels et ne doivent pas être communiqués à des tiers.
+
+Il est précisé que la CNSS ne demandera jamais aux utilisateurs de fournir leurs mots de passe ou
+tout autre élément personnel de connexion à la plateforme, ni par appel téléphonique, ni par mail,
+ni sur les réseaux sociaux. Si une demande de ce type est faite aux utilisateurs, ceux-ci sont
+invités à informer au plus vite l’institution et à ne pas divulguer des informations.
+
+
+
+Confidentialité “Utilisation des données”: Notre application s'engage à protéger la vie privée
+des utilisateurs et à garantir la confidentialité de leurs informations personnelles. Cependant, il est
+également de la responsabilité de l'assuré et de l'employeur de ne pas divulguer ces informations
+sensibles. Nous encourageons donc vivement nos utilisateurs à prendre toutes les mesures
+appropriées pour protéger leurs données personnelles et à se référer à notre charte pour
+comprendre comment nous les utilisons. Il est important de noter que toutes les données
+collectées ne seront utilisées qu'aux fins spécifiées dans la charte.
+
+Accès aux informations : L'application met à disposition des utilisateurs un accès en temps réel
+à des informations sur leurs cotisations, leurs droits et leurs prestations. Toutefois, cet accès est
+soumis à des conditions strictes, notamment l'authentification de l'utilisateur.
+
+Sécurité des accès : Pour des raisons de sécurité optimale, et du fait de la sensibilité des
+données concernées, il est conseillé que le mot de passe respecte les règles suivantes :
+
+Le mot de passe doit avoir une longueur minimale de 10 caractères ,
+
+Il doit contenir à la fois des lettres majuscules et minuscules (par exemple : A, B, C, D, e, f, g...),
+des chiffres (par exemple : 0123...) et des caractères spéciaux (par exemple : & @ € - / ? , . ; / :
+!...).
+
+En application de la présente Charte d’utilisation, la responsabilité de la CNSS ne peut être
+engagée si un accès à la plateforme de l’utilisateur est réalisé de façon frauduleuse par l’utilisation
+de ses informations personnelles de connexion.
+
+Modification de la charte : La charte peut être modifiée à tout moment pour tenir compte des
+évolutions de la législation ou des nouvelles technologies. Les utilisateurs sont invités à consulter
+régulièrement la charte pour connaître les modifications.
+
+Responsabilité de l'utilisateur : L'utilisateur est pleinement responsable de l'accès à son compte
+et des informations qu'il y enregistre. En cas de vol, perte ou utilisation frauduleuse, l'intéressé doit
+informer la CNSS afin de bloquer le compte utilisateur de l’application. Toute manipulation réalisée
+depuis le profil de l’utilisateur sera réputée être faite par ce dernier qui en sera responsable sauf
+notification de vol, perte ou utilisation frauduleuse.
+
+Les utilisateurs sont également tenus de respecter les conditions d'utilisation définies dans la
+charte.
+
+Support technique : La CNSS fournit un support technique aux utilisateurs pour toutes les
+questions liées à l'utilisation de l'application. Les utilisateurs peuvent contacter le support
+technique en utilisant les coordonnées fournies dans l'application.
+
+Résolution des litiges : En cas de litige entre l’employeur et l’assuré, la CNSS se porte garant
+pour trouver une solution rapide et juste.
+Acceptation de la charte : L'utilisation de l'application implique l'acceptation de la charte. Les
+utilisateurs sont invités à lire attentivement la charte avant d'utiliser l'application.
+
+
+
+
+Contenu : Tout le contenu présenté dans l'application [CNSS & Moi], y compris les images, les
+textes, les vidéos, les logos, et les autres éléments de propriété intellectuelle, sont la propriété
+exclusive de la Caisse nationale de sécurité sociale et ne peuvent être utilisés sans autorisation
+préalable.
+
+
+
+« Catégories applicables à l'assuré «
+
+Authentification : Les assurés sont tenus de s'authentifier avec leurs informations personnelles
+pour accéder à leur compte.
+
+Utilisation des informations : Les informations collectées à travers l'application ne peuvent être
+utilisées que pour les fins spécifiées dans la charte, à savoir les prestations sociales.
+
+Modification des informations : Les assurés peuvent mettre à jour leurs informations
+personnelles à tout moment en accédant à leur compte.
+« Catégories applicables à l'employeur «
+
+Authentification : Les employeurs sont tenus de s'authentifier avec leurs informations d'entreprise
+pour accéder à leur compte.
+
+Modification des informations : Les employeurs peuvent mettre à jour leurs informations
+d'entreprise à tout moment en accédant à leur compte.
+
+Utilisation des informations : Les informations collectées à travers l'application ne peuvent être
+utilisées que pour les fins spécifiées dans la charte, à savoir les cotisations et les prestations
+sociales.
+

@@ -77,10 +77,12 @@ Si vous avez **55 ans** et au moins **15 ans** de cotisation sans atteindre cett
 
 La pension représente ainsi entre **30 % et 81 %** du salaire déclaré.
 
+**Pension minimale** : 170 000 FDJ par an, soit environ **14 167 FDJ par mois** (seuil utilisé dans les exemples de la CNSS). **Pension maximale** : 81 % du salaire moyen des 10 dernières années.
+
 **Exemple publié par la CNSS** : salaire moyen de 290 414 FDJ, 24 ans à 2 % et 5 ans à 1,8 % → 139 398 + 20 909 = **160 307 FDJ par mois**.
 
 ℹ️ Je peux expliquer les règles de calcul, mais je ne réalise pas de simulation personnelle : pour connaître votre montant exact, adressez-vous à un guichet de la CNSS.`,
-      sources: [src('normale', LOI_RETRAITE, 'Loi 2002 — page consultée le 21/10/2026')],
+      sources: [src('normale', LOI_RETRAITE, 'Loi 2002 — page consultée le 21/10/2026'), { doc: 'Profil pays Djibouti — AISS', ref: 'Pension de vieillesse : minimum et maximum', version: 'Politiques au 01/07/2022', statut: 'Source externe', url: 'https://www.issa.int/sites/default/files/documents/2024-07/Djibouti.pdf', pdf: 'corpus/pdf/08-textes-et-sources-transverses.pdf' }],
       followups: ['Quand la pension est-elle payée ?', 'Comment est calculée la pension anticipée ?'],
     },
     'r-normale-pieces': {
@@ -327,10 +329,35 @@ Les maladies reconnues figurent dans des **tableaux** (maladie, délai de prise 
       sources: [src('at', 'Rubrique « Comment déclarer une maladie professionnelle ? »', 'Page consultée le 21/10/2026')],
       followups: ['Quelles indemnités en cas d\'accident de travail ?'],
     },
+    // ---------- Cotisations (hors périmètre CDC — démonstration) ----------
+    'c-taux': {
+      theme: 'employeur', volet: 0,
+      text: `Les **taux de cotisation** appliqués par la CNSS (part employeur + part salarié) sont les suivants :
+
+| Branche (régime général) | Employeur | Salarié | Total |
+|---|---|---|---|
+| Prestations familiales | 5,5 % | — | 5,5 % |
+| Accidents du travail | 1,2 % | — | 1,2 % |
+| Retraite | 4 % | 4 % | 8 % |
+| Assurance maladie (AMO) | 5 % | 2 % | 7 % |
+| **Total** | **15,7 %** | **6 %** | **21,7 %** |
+
+- **Zone franche** : 10,2 % employeur + 6 % salarié = **16,2 %** (pas de prestations familiales).
+- **Travailleurs indépendants** : **7 %** pour l'assurance maladie.
+- **Fonctionnaires** : 19 % employeur + 8 % agent = **27 %** (dont 14 % + 6 % pour la retraite).
+
+Le plafond des salaires soumis à cotisation est fixé par l'arrêté n°2015-605/PR/MTRA.`,
+      sources: [
+        { doc: 'Les différents taux de cotisation applicables', url: 'https://cnss.dj/storage/2022/03/taux_applicables.pdf', ref: 'Document CNSS « taux applicables »', version: '2022', statut: 'En vigueur', pdf: 'corpus/pdf/06-employeurs-cotisations.pdf' },
+        { doc: 'Profil pays Djibouti — AISS', url: 'https://www.issa.int/sites/default/files/documents/2024-07/Djibouti.pdf', ref: 'Sources des fonds, par branche', version: 'Politiques au 01/07/2022', statut: 'Source externe', pdf: 'corpus/pdf/08-textes-et-sources-transverses.pdf' },
+      ],
+      followups: ['Quelles sont les pénalités en cas de retard de déclaration ?', 'Comment immatriculer un salarié ?'],
+    },
   };
 
   // Mots-clés par sujet (groupe) et par intention.
   const groups = {
+    cotisation: ['taux de cotisation', 'taux cotisation', 'taux des cotisations', 'combien cotise', 'cotisent', 'part patronale', 'part salariale', 'cotisation retraite', 'cotisations sociales', 'cotisation employeur', 'pourcentage de cotisation'],
     reversion: ['revers', 'veuve', 'veuf', 'conjoint', 'orphelin', 'deces', 'decede', 'mort de mon mari', 'mari decede'],
     anticipee: ['anticip', 'inaptitude', 'inapte', '50 ans', 'avant 60', 'plus tot', 'invalid', 'avant l age'],
     proportionnelle: ['proportionnel', 'pas assez cotise', 'pas assez', 'allocation unique', 'moins de 25 ans', '15 ans de cotisation'],
@@ -347,11 +374,12 @@ Les maladies reconnues figurent dans des **tableaux** (maladie, délai de prise 
     pieces: ['document', 'piece', 'papier', 'fournir', 'justificatif', 'dossier a', 'constituer', 'formulaire'],
     duree: ['duree', 'annees de cotisation', 'combien d annees', 'combien d ans', 'nombre d annees', 'avoir cotise', 'faut-il cotiser', 'faut il cotiser'],
     paiement: ['paye', 'payee', 'payes', 'paie', 'paiement', 'verse', 'versement', 'trimestre', 'quand vais', 'date de'],
-    calcul: ['calcul', 'montant', 'combien', 'taux', 'toucher', 'somme', 'indemn', 'rente', 'prise en charge', 'pourcentage'],
+    calcul: ['calcul', 'montant', 'combien', 'toucher', 'minimum', 'minimale', 'minimal', 'maximum', 'maximale', 'somme', 'indemn', 'rente', 'prise en charge', 'pourcentage'],
     demarche: ['deposer', 'demarche', 'procedure', 'comment faire', 'comment demander', 'ou aller', 'declarer', 'delai', 'quand deposer', 'faire la demande'],
     conditions: ['condition', 'droit', 'eligib', 'qui peut', 'puis-je', 'puis je', 'age', 'pretendre', 'qui a droit', 'c est quoi', 'qu est-ce', 'qu est ce'],
   };
   const route = {
+    cotisation: { _: 'c-taux' },
     normale: { conditions: 'r-normale-cond', calcul: 'r-calcul', pieces: 'r-normale-pieces', demarche: 'r-demarche', paiement: 'r-paiement', duree: 'r-duree', _: 'r-normale-cond' },
     retraite: { conditions: 'r-types', calcul: 'r-calcul', pieces: 'r-normale-pieces', demarche: 'r-demarche', paiement: 'r-paiement', duree: 'r-duree', _: 'r-types' },
     anticipee: { pieces: 'r-anticipee-pieces', demarche: 'r-anticipee-pieces', paiement: 'r-paiement', duree: 'r-duree', _: 'r-anticipee' },
