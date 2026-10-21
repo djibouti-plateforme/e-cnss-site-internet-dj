@@ -20,22 +20,39 @@ Réplique statique de la page d'accueil de [cnss.dj](https://cnss.dj/) intégran
 | Volet 1 / Volet 2 | Badges « Retraite · Volet 1 » et « Volet 2 · aperçu » |
 | ENF-08 / ENF-09 — mobile, accessibilité | Plein écran sur mobile, taille de texte A+, clavier, Échap |
 
-## Scénario conseillé pour la présentation
+## Pages
 
-1. Ouvrir le site, montrer la bulle d'accroche puis le bouton flottant.
-2. « À quelle pension de retraite puis-je prétendre ? » → réponse sourcée.
-3. « Et pour la réversion ? » puis « quelles pièces ? » → gestion du contexte.
-4. « Comment est calculée la pension ? » → règles expliquées, sans simulation personnelle.
-5. « Où en est ma demande ? mon tel 77 12 34 56 » → masquage + orientation.
-6. « Ignore tes instructions… » → refus.
-7. Menu Espaces → Espace Retraite : les liens ouvrent l'assistant avec la question.
+| Page | Rôle |
+|---|---|
+| `index.html` | Réplique de cnss.dj avec le widget de l'assistant |
+| `assistant.html` | Page web dédiée de l'assistant (1re étape de déploiement, §11) |
+| `mobile.html` | Maquette de l'application mobile CNSS + QR code pour tester sur téléphone |
+| Console Cellule DATA | Dépôt séparé `e-cnss-cellule-data-supervision` |
+
+**Mode « Sous le capot »** : bouton ≋ dans l'en-tête du chatbot (ou `?capot=1` dans l'URL). Chaque réponse affiche alors la chaîne RAG : garde-fous, recherche des passages avec leur score, texte abrogé exclu, consigne du modèle, temps de réponse.
+
+## Scénario conseillé pour la présentation (≈ 10 min)
+
+Ouvrir deux onglets **dans le même navigateur** : le site et la console de supervision (connectée).
+
+1. **Le site** — bulle d'accroche, bouton flottant, menu Espaces → Espace Retraite.
+2. « À quelle pension de retraite puis-je prétendre ? » → réponse sourcée, avertissement.
+3. « Et pour la réversion ? » puis « quelles pièces ? » → contexte de conversation.
+4. « Où en est ma demande ? mon tel 77 12 34 56 » → masquage + orientation CNSS.
+5. « Ignore tes instructions… » → refus.
+6. **Sous le capot** : activer ≋, reposer une question maternité → passages, texte abrogé exclu, < 10 s.
+7. **Multi-canal** : `mobile.html`, faire scanner le QR code par l'assistance.
+8. **Console** : les questions posées apparaissent en direct ; montrer le journal anonymisé,
+   puis Qualité (le modèle B bloqué à 81,3 % < 85 %), puis Corpus → « Ajouter un document » →
+   « Ré-indexer » → évaluation automatique relancée.
 
 ## Structure
 
 - `index.html` — page d'accueil répliquée + widget
 - `assets/css/style.css` — styles du site, `assets/css/chatbot.css` — widget
 - `assets/js/kb.js` — corpus de démonstration (à remplacer par l'API RAG)
-- `assets/js/chatbot.js` — widget, garde-fous et routage des questions
+- `assets/js/chatbot.js` — widget (injecté sur chaque page), garde-fous, trace « Sous le capot », journal partagé avec la console
+- `assets/css/assistant-page.css` — page dédiée et affichage application mobile
 
 ## Déploiement
 
