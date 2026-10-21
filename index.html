@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Caisse Nationale de Sécurité Sociale — Maquette Assistant CNSS</title>
+  <meta name="description" content="Maquette de démonstration : réplique du site cnss.dj intégrant l'assistant conversationnel (chatbot RAG) sur les prestations sociales.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <div class="demo-ribbon" role="note">
+    Maquette de démonstration — Projet « Assistant CNSS » (chatbot RAG, DSI / Cellule DATA). Réponses simulées à partir des pages publiques de cnss.dj.
+  </div>
+
+  <!-- Bandeau info -->
+  <div class="info-bar">
+    <span class="info-tag">INFO!</span>
+    <span>Paiement du quatrième trimestre prévu du 02/01 au 15/01.</span>
+    <a href="#" class="info-link">Plus d'information <span aria-hidden="true">→</span></a>
+  </div>
+
+  <header class="site-header">
+    <div class="container top-links">
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M22 5.8a8.3 8.3 0 0 1-2.4.6 4.1 4.1 0 0 0 1.8-2.3 8.2 8.2 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5 4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.8.1 4.1 4.1 0 0 0 3.8 2.8A8.2 8.2 0 0 1 2 18.3a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5A8.3 8.3 0 0 0 22 5.8z"/></svg></a>
+      </div>
+      <nav class="secondary-nav" aria-label="Liens rapides">
+        <a href="#">Vidéothèque</a>
+        <a href="#">Galerie d'images</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Télé-déclaration</a>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="main-nav">
+        <a href="#" class="brand" aria-label="Accueil CNSS">
+          <img src="assets/img/logo-cnss.png" alt="Caisse Nationale de Sécurité Sociale">
+          <span class="brand-text">Caisse Nationale<br>de Sécurité Sociale</span>
+        </a>
+        <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+        <ul class="menu" id="menu">
+          <li class="has-sub"><a href="#">La CNSS</a>
+            <ul class="sub">
+              <li><a href="#">Mot de la Directrice Générale</a></li>
+              <li><a href="#">Historique, Missions &amp; Valeurs</a></li>
+              <li><a href="#">Financement de la CNSS</a></li>
+              <li><a href="#">Projet Esanté</a></li>
+            </ul>
+          </li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li class="has-sub"><a href="#structures">Structures</a>
+            <ul class="sub">
+              <li><a href="#structures">Centre de soins 1</a></li>
+              <li><a href="#structures">Centre de soins 2</a></li>
+              <li><a href="#structures">Pôle de soins Spécialisés</a></li>
+              <li><a href="#structures">Hôpital Régional d'Arta</a></li>
+              <li><a href="#structures">Dji-Pharma</a></li>
+            </ul>
+          </li>
+          <li class="has-sub mega"><a href="#prestations">Espaces</a>
+            <div class="sub mega-panel">
+              <div>
+                <h4>Espace Employeur</h4>
+                <a href="#">Affiliation Employeur</a>
+                <a href="#">Déclaration et versement des cotisations</a>
+                <a href="#">Pénalités sanctions et poursuites</a>
+              </div>
+              <div>
+                <h4>Espace Assuré</h4>
+                <a href="#">Immatriculation Salarié</a>
+                <a href="#">Immatriculation Ayant-Droit</a>
+                <a href="#" data-ask="Comment déclarer un accident de travail ?">Accident de Travail</a>
+                <a href="#">VISION ZÉRO accident de travail</a>
+                <a href="#" data-ask="Combien sont les allocations familiales ?">Prestations familiales</a>
+                <a href="#" data-ask="Qui a droit à l'allocation de mariage ?">Allocations de mariage</a>
+                <a href="#" data-ask="Comment est payée l'allocation de maternité ?">Allocation de Maternité</a>
+              </div>
+              <div>
+                <h4>Espace Retraite</h4>
+                <a href="#" data-ask="Quelles sont les conditions pour obtenir une pension de retraite normale ?">Pensions de retraite Normale</a>
+                <a href="#" data-ask="Qui peut partir en retraite anticipée ?">Pensions de retraite Anticipée</a>
+                <a href="#" data-ask="Qu'est-ce que la pension proportionnelle ?">Pensions de retraite Proportionnelle</a>
+                <a href="#" data-ask="Qui a droit à la pension de réversion ?">Pensions de retraite Réversion</a>
+              </div>
+            </div>
+          </li>
+          <li class="has-sub"><a href="#amu">Assurance Maladie Universelle</a>
+            <ul class="sub">
+              <li><a href="#amu">Assurance Maladie Obligatoire</a></li>
+              <li><a href="#amu">Programme d'Assistance Sociale de Santé</a></li>
+              <li><a href="#amu">AMU : Spécial Etudiant</a></li>
+              <li><a href="#amu">FAQ – AMU ETUDIANT</a></li>
+              <li><a href="#amu">Demande de carte de sécurité sociale biométrique</a></li>
+              <li><a href="#amu">Adhésion AMU Famille</a></li>
+            </ul>
+          </li>
+          <li class="menu-cta"><a href="#" class="btn-ghost">Téléchargement <span aria-hidden="true">+</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- HERO -->
+    <section class="hero">
+      <span class="vertical-label">Caisse Nationale de Sécurité Sociale</span>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="pill">Nouveauté :</span> Assistant CNSS en ligne — posez vos questions 24h/24</p>
+          <h1>Caisse Nationale de<br><span class="grad-a">Sécurité</span> <span class="grad-b">Sociale</span></h1>
+          <p class="lead">Bienvenue sur le site web de l'institution en charge de la gestion de la sécurité sociale en République de Djibouti</p>
+          <div class="hero-actions">
+            <a href="#" class="btn-soft">A propos de nous <span aria-hidden="true">›</span></a>
+            <button class="btn-link" type="button" data-open-chat>Demander à l'assistant <span aria-hidden="true">›</span></button>
+          </div>
+          <p class="hero-meta"><span class="dots"><i></i><i></i><i></i></span> CNSS : Caisse Nationale de Sécurité Sociale</p>
+        </div>
+        <div class="hero-visual">
+          <div class="blob"><img src="assets/img/hero-accueil.jpg" alt="Accueil de la CNSS"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTECTION SOCIALE -->
+    <section class="protection">
+      <div class="container two-col">
+        <div class="media-card">
+          <img src="assets/img/guichet.jpg" alt="Un assuré au guichet de la CNSS">
+        </div>
+        <div>
+          <p class="eyebrow"><span class="pill">CNSS</span> Assurance d'une meilleure Protection.</p>
+          <h2 class="display">Protection sociale<br><span class="grad-a">Assurance</span> <span class="grad-b">Efficace</span></h2>
+          <p class="lead">La CNSS est là pour vous accompagner tout au long de votre vie</p>
+          <div class="hero-actions">
+            <a href="#prestations" class="btn-soft">En savoir plus <span aria-hidden="true">›</span></a>
+            <a href="#amu" class="btn-link">Inscription — à l'assurance maladie <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDEAU ASSISTANT (nouveau) -->
+    <section class="assistant-band">
+      <div class="container assistant-grid">
+        <div>
+          <p class="section-tag">Nouveau service</p>
+          <h2>Une question sur vos droits ? <br>Demandez à l'<span class="grad-b">Assistant CNSS</span>.</h2>
+          <p>L'assistant répond en langage simple à partir de la documentation officielle de la CNSS : conditions, pièces à fournir, démarches. Chaque réponse cite sa source.</p>
+          <ul class="checks">
+            <li>Disponible 24h/24, sans déplacement</li>
+            <li>Réponses sourcées et datées</li>
+            <li>Aucune donnée personnelle demandée</li>
+          </ul>
+          <button class="btn-primary" type="button" data-open-chat>Démarrer une conversation</button>
+        </div>
+        <div class="sample-qs">
+          <p class="sample-title">Questions fréquentes</p>
+          <button type="button" data-ask="À quelle pension de retraite puis-je prétendre ?">À quelle pension de retraite puis-je prétendre ?</button>
+          <button type="button" data-ask="Quels documents dois-je fournir pour ma demande de retraite ?">Quels documents dois-je fournir pour ma retraite ?</button>
+          <button type="button" data-ask="Comment déposer ma demande de pension ?">Comment déposer ma demande de pension ?</button>
+          <button type="button" data-ask="Comment est calculée la pension de retraite ?">Comment est calculée ma pension ?</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTUALITES -->
+    <section class="news" id="actualites">
+      <div class="container">
+        <p class="section-tag center">Actualités</p>
+        <div class="news-grid">
+          <article class="news-card big" style="--bg:url('../img/actu-vamed.jpg')">
+            <div class="news-overlay">
+              <p><span class="chip light">3 ans</span><span class="chip">ACTU</span></p>
+              <h3>VAMED et La CNSS s'associent pour un partenariat stratégique</h3>
+              <p class="by">Posted by <u>webmaster</u></p>
+            </div>
+          </article>
+          <article class="news-card" style="--bg:url('../img/actu-tabac.jpg')">
+            <div class="news-overlay">
+              <p><span class="chip">ACTU</span></p>
+              <h3>Décrochez pour de bon !</h3>
+            </div>
+          </article>
+          <article class="news-card" style="--bg:url('../img/cs1.jpg')">
+            <div class="news-overlay">
+              <p><span class="chip">ACTU</span></p>
+              <h3>La médecine du travail à Gabode 4 dans nos nouveaux locaux</h3>
+            </div>
+          </article>
+        </div>
+        <div class="center"><a href="#" class="btn-dark">Load more</a></div>
+      </div>
+    </section>
+
+    <!-- STRUCTURES -->
+    <section class="structures" id="structures">
+      <div class="container">
+        <p class="section-tag center">Nos structures</p>
+        <div class="tabs" role="tablist" data-tabs="struct">
+          <button role="tab" aria-selected="true" data-tab="s1">Centre de Soins 1</button>
+          <button role="tab" aria-selected="false" data-tab="s2">Centre de Soins 2</button>
+          <button role="tab" aria-selected="false" data-tab="s3">Pôle de soins Spécialisés</button>
+          <button role="tab" aria-selected="false" data-tab="s4">Hôpital Régional d'Arta</button>
+          <button role="tab" aria-selected="false" data-tab="s5">DjiPharma</button>
+          <button role="tab" aria-selected="false" data-tab="s6">Structures conventionnées</button>
+        </div>
+        <div class="tab-panels" data-panels="struct">
+          <div class="tab-panel active" id="s1">
+            <div class="two-col">
+              <div><h3>Ancien SMI</h3><p>Le Centre de Soins 1, plus connu sous son ancienne appellation SMI, a été construit en 1972 pour assurer des prestations de soins aux salariés affiliés à la Caisse des Prestations Sociales (CPS).</p>
+                <ul class="tags"><li>Urgence</li><li>Hospitalisation</li><li>Consultation</li><li>Soins spécialisés</li></ul><a href="#" class="btn-soft">En savoir plus ›</a></div>
+              <div class="blob small"><img src="assets/img/cs1.jpg" alt="Centre de Soins 1"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="s2">
+            <div class="two-col">
+              <div><h3>Ancien SMI 2</h3><p>Connu sous son ancienne appellation SMI 2, le Centre de soins 2 est sis au quartier 6. Cette structure qui a vu le jour en 1974 accueille les familles ou les ayants droit du principal assuré.</p>
+                <ul class="tags"><li>Consultation</li><li>Soins spécialisés</li></ul><a href="#" class="btn-soft">En savoir plus ›</a></div>
+              <div class="blob small"><img src="assets/img/cs2.jpg" alt="Centre de Soins 2"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="s3">
+            <div class="two-col">
+              <div><h3>Le Pôle de soins Spécialisés</h3><p>Service d'urgence performant, le Pôle de soins Spécialisés (PSS) a été inauguré le 20 février 2016 par le Président de la République SEM Ismaïl Omar Guelleh.</p>
+                <ul class="tags"><li>Urgence</li><li>Consultation</li><li>Soins spécialisés</li></ul><a href="#" class="btn-soft">En savoir plus ›</a></div>
+              <div class="blob small"><img src="assets/img/pss.jpg" alt="Pôle de soins Spécialisés"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="s4">
+            <div class="two-col">
+              <div><h3>L'Hôpital Régional d'Arta</h3><p>Cet hôpital inauguré le 18 octobre 2012 par le Président de la République a été rétrocédé à la CNSS en 2015 afin qu'elle procède à son opérationnalisation. L'objectif : un hôpital régional spécialisé dans les chirurgies de courte durée.</p>
+                <ul class="tags"><li>Urgence</li><li>Consultation</li><li>Soins spécialisés</li></ul><a href="#" class="btn-soft">En savoir plus ›</a></div>
+              <div class="blob small"><img src="assets/img/amu-accueil.jpg" alt="Hôpital Régional d'Arta"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="s5">
+            <div class="two-col">
+              <div><h3>DjiPharma</h3><p>Créé en 2005, Djibpharma est le premier laboratoire pharmaceutique djiboutien de production des solutés et injectables médicaux. Cette unité est sous tutelle de la CNSS.</p><a href="#" class="btn-soft">En savoir plus ›</a></div>
+              <div class="blob small"><img src="assets/img/djibpharma.jpg" alt="Laboratoire DjiPharma"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="s6">
+            <div class="two-col">
+              <div><h3>Structures conventionnées</h3><p>En 2015, la CNSS a, dans le cadre de l'Assurance Maladie Universelle, signé des conventions avec l'hôpital Peltier, l'hôpital de Balbala et la maternité de Dar-el-Hanan, et renouvelé en 2016 sa convention avec le complexe hospitalier d'Al-Rahma.</p><a href="#" class="btn-soft">En savoir plus ›</a></div>
+              <div class="blob small"><img src="assets/img/cs2.jpg" alt="Structure conventionnée"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMU -->
+    <section class="amu" id="amu">
+      <div class="container two-col">
+        <div>
+          <h2 class="section-title"><span class="accent">AMU</span> Assurance Maladie Universelle</h2>
+          <div class="amu-grid">
+            <div><span class="num">1</span><h4>Qu'est-ce que l'assurance maladie ?</h4><p>L'Assurance Maladie Universelle (AMU) est l'une des plus ambitieuses réformes de la politique sociale. Elle assure une couverture médicale de base à toute la population vivant en République de Djibouti.</p></div>
+            <div><span class="num">2</span><h4>Assurance Maladie Obligatoire</h4><p>L'AMO est un régime obligatoire pour toute personne active. Avec l'AMO, cotisez pour vos soins mais offrez aussi une couverture médicale à votre famille.</p></div>
+            <div><span class="num">3</span><h4>Programme d'assistance sociale de Santé</h4><p>Le PASS est le volet solidaire de l'AMU : un régime subventionné qui couvre les personnes identifiées comme n'ayant « aucun revenu ».</p></div>
+            <div><span class="num">4</span><h4>AMU spéciale Étudiants</h4><p>Lancé à la rentrée 2016-2017, ce régime obligatoire est dédié aux étudiants de moins de 35 ans en formation initiale à l'Université de Djibouti.</p></div>
+          </div>
+        </div>
+        <div class="blob"><img src="assets/img/amu-accueil.jpg" alt="Espace d'accueil CNSS"></div>
+      </div>
+    </section>
+
+    <!-- PRESTATIONS -->
+    <section class="prestations" id="prestations">
+      <div class="container">
+        <p class="section-tag center">Nos prestations sociales</p>
+        <div class="tabs underline" role="tablist" data-tabs="prest">
+          <button role="tab" aria-selected="true" data-tab="p1">AMU</button>
+          <button role="tab" aria-selected="false" data-tab="p2">Prestation Familiale</button>
+          <button role="tab" aria-selected="false" data-tab="p3">Accident de travail</button>
+          <button role="tab" aria-selected="false" data-tab="p4">Régime de retraite</button>
+        </div>
+        <div class="tab-panels" data-panels="prest">
+          <div class="tab-panel active" id="p1"><div class="two-col">
+            <div class="links-box"><h4>Liens utiles</h4><a href="#amu">Assurance Maladie Universelle</a><a href="#amu">Assurance Maladie Obligatoire</a><a href="#amu">Programme d'Assistance Sociale de Santé</a><a href="#amu">AMU : Spécial Etudiant</a><a href="#amu">FAQ - AMU ETUDIANT</a><a href="#amu">Premier emploi/Adhésion AMU</a><a href="#amu">Déjà affilié à la CNSS / Adhésion AMU</a><a href="#amu">Adhésion AMU Famille</a></div>
+            <div class="blob alt"><img src="assets/img/cadre.jpg" alt=""></div></div></div>
+          <div class="tab-panel" id="p2"><div class="two-col">
+            <div class="links-box"><h4>Liens utiles</h4><a href="#" data-ask="Combien sont les allocations familiales ?">Allocations Familiales</a><a href="#" data-ask="Qui a droit à l'allocation de mariage ?">Allocations de mariage</a><a href="#" data-ask="Comment est payée l'allocation de maternité ?">Allocation de Maternité</a></div>
+            <div class="blob alt"><img src="assets/img/depliant.jpg" alt=""></div></div></div>
+          <div class="tab-panel" id="p3"><div class="two-col">
+            <div class="links-box"><h4>Liens utiles</h4><a href="#" data-ask="Comment déclarer un accident de travail ?">Accident de Travail</a></div>
+            <div class="blob alt"><img src="assets/img/guichet.jpg" alt=""></div></div></div>
+          <div class="tab-panel" id="p4"><div class="two-col">
+            <div class="links-box"><h4>Liens utiles</h4><a href="#" data-ask="Quelles sont les conditions pour obtenir une pension de retraite normale ?">Pension de retraite Normale</a><a href="#" data-ask="Qui peut partir en retraite anticipée ?">Pension de Retraite Anticipée</a><a href="#" data-ask="Qu'est-ce que la pension proportionnelle ?">Pension de Retraite Proportionnelle</a><a href="#" data-ask="Qui a droit à la pension de réversion ?">Pension de Retraite Réversion</a></div>
+            <div class="blob alt"><img src="assets/img/hero-accueil.jpg" alt=""></div></div></div>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,120 480,0 720,48 C960,96 1200,24 1440,64 L1440,120 L0,120 Z" fill="#fff"/></svg>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p>Copyright © 2022. Caisse Nationale de sécurité sociale</p>
+        <p>Tous droits réservés. Créé par DSI/CNSS</p>
+      </div>
+      <div>
+        <h4>Contact info</h4>
+        <p class="f-label">Téléphone</p><p>+253 21 35 03 21</p>
+        <p class="f-label">Adresse</p><p>Boulevard de la République, Djibouti<br>BP 696</p>
+        <p class="f-label">Heures de travail</p><p>Dim – Jeu : 08:00 – 17:00</p>
+      </div>
+      <div>
+        <h4>Contact urgence</h4>
+        <p class="f-label">Urgence centre soins 1</p><p>+253 21 25 06 97</p>
+        <p class="f-label">Laboratoires de Centre de soins 1</p><p>+253 21 33 18 65</p>
+        <p class="f-label">Heures de travail</p><p>24H/24 : 7J/7</p>
+      </div>
+      <div>
+        <h4>Lien rapide</h4>
+        <a href="#">Formulaire</a><a href="#">Annuaire de la CNSS</a><a href="#structures">Nos structures</a><a href="#">Télé-service</a><a href="#">Conditions d'utilisation de nos applications mobiles</a>
+        <a href="#" data-open-chat>Assistant CNSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CHATBOT WIDGET ============ -->
+  <div class="cb-teaser" id="cb-teaser" hidden>
+    <button class="cb-teaser-close" aria-label="Fermer">×</button>
+    <p><strong>Bonjour 👋</strong><br>Une question sur votre retraite ou vos prestations ? Je peux vous aider.</p>
+  </div>
+  <button class="cb-launcher" id="cb-launcher" aria-label="Ouvrir l'Assistant CNSS" aria-expanded="false" aria-controls="cb-panel">
+    <svg class="ic-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+    <span class="cb-badge" aria-hidden="true">1</span>
+  </button>
+
+  <section class="cb-panel" id="cb-panel" role="dialog" aria-modal="false" aria-labelledby="cb-title" hidden>
+    <header class="cb-head">
+      <div class="cb-avatar"><img src="assets/img/logo-cnss.png" alt=""></div>
+      <div class="cb-head-text">
+        <h2 id="cb-title">Assistant CNSS</h2>
+        <p><span class="cb-online"></span> Prestations sociales · Réponses sourcées</p>
+      </div>
+      <div class="cb-head-actions">
+        <button class="cb-icon" id="cb-font" aria-label="Agrandir le texte" title="Taille du texte">A+</button>
+        <button class="cb-icon" id="cb-reset" aria-label="Nouvelle conversation" title="Nouvelle conversation"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="cb-icon" id="cb-expand" aria-label="Agrandir la fenêtre" title="Agrandir"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <button class="cb-icon" id="cb-close" aria-label="Fermer l'assistant" title="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+      </div>
+    </header>
+    <div class="cb-scopes" role="group" aria-label="Thème">
+      <button class="cb-scope active" data-scope="all">Tout</button>
+      <button class="cb-scope" data-scope="retraite">Retraite <small>Volet 1</small></button>
+      <button class="cb-scope" data-scope="famille">Famille</button>
+      <button class="cb-scope" data-scope="maternite">Maternité</button>
+      <button class="cb-scope" data-scope="atmp">AT/MP</button>
+    </div>
+    <div class="cb-body" id="cb-body" aria-live="polite"></div>
+    <div class="cb-pii-warn" id="cb-pii" hidden>⚠️ Ne communiquez pas de données personnelles (n° d'assuré, téléphone…). Elles seront masquées.</div>
+    <form class="cb-form" id="cb-form" autocomplete="off">
+      <label for="cb-input" class="sr-only">Votre question</label>
+      <textarea id="cb-input" rows="1" maxlength="500" placeholder="Posez votre question sur vos prestations…"></textarea>
+      <button type="submit" class="cb-send" aria-label="Envoyer"><svg viewBox="0 0 24 24"><path d="M3 11.5L21 3l-8.5 18-2.2-7.3L3 11.5z" fill="currentColor"/></svg></button>
+    </form>
+    <p class="cb-foot">Information indicative — ne remplace pas la décision de la CNSS.</p>
+  </section>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/kb.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+</body>
+</html>
