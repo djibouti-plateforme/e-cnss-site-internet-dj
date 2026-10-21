@@ -209,11 +209,11 @@
   // Questions où le corpus est plus précis que les réponses rédigées (cotisations, employeurs, AMU…).
   const CORPUS_FIRST = /employeur declar|immatricul|zone franche|fonctionnaire|amu|amo|pass |carte|etudiant|penalit|plafond|myafia|paternit|funera|carence|rente|deces|etranger/;
   // Termes de la question qui ne relèvent ni du sujet, ni de l'intention détectés.
-  const FILLER = 'pension retraite allocation allocations prestation prestations conge travail demande dossier numero telephone tel masque assure assuree droit obtenir avoir parle moi explique informations info';
+  const FILLER = 'pension retraite allocation allocations prestation prestations conge travail demande dossier numero telephone tel masque assure assuree an ans annee annees droit obtenir avoir quelque chose parle moi explique informations info';
   function residual(question, group, intent) {
     if (!RAG) return [];
     const known = new Set(RAG.tokens([FILLER, (KB.groups[group] || []).join(' '), intent ? KB.intents[intent].join(' ') : ''].join(' ')));
-    return RAG.tokens(question.replace(/⟦.+?⟧/g, ' ')).filter((t) => !known.has(t));
+    return RAG.tokens(question.replace(/⟦.+?⟧/g, ' ')).filter((t) => !known.has(t) && !/^\d+$/.test(t));
   }
 
   // Texte d'une réponse type + mots-clés qui y mènent (pour juger si elle couvre la question).

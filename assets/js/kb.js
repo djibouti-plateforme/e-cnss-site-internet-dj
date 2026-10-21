@@ -331,6 +331,63 @@ Les maladies reconnues figurent dans des **tableaux** (maladie, délai de prise 
       sources: [src('at', 'Rubrique « Comment déclarer une maladie professionnelle ? »', 'Page consultée le 21/10/2026')],
       followups: ['Quelles indemnités en cas d\'accident de travail ?'],
     },
+    'r-peu-cotise': {
+      theme: 'retraite', volet: 1,
+      text: `Si vous n'avez pas cotisé assez longtemps pour une pension normale, vos cotisations ne sont **pas perdues** :
+
+- **Au moins 15 ans de cotisation, à 55 ans** : vous pouvez demander une **pension proportionnelle**, calculée au prorata de vos années de cotisation.
+- **Moins de 15 ans de cotisation, à 55 ans** : vous avez droit à une **allocation unique**, égale à la **part salariale** des cotisations vieillesse que vous avez versées.
+- **Avant 55 ans** : vos années restent acquises. Vous pouvez continuer à cotiser en reprenant un emploi salarié ; une personne au chômage qui était assurée peut aussi cotiser **volontairement** (8 % du dernier salaire) pour compléter sa durée.
+
+Rapprochez-vous d'un guichet de la CNSS avec votre carte d'immatriculation pour faire le point sur vos années validées.`,
+      sources: [
+        src('prop', 'Arrêté n°2004-0309/PR/MESN — allocation unique si moins de 15 ans', '2004 — page consultée le 21/10/2026'),
+        { doc: 'Profil pays Djibouti — AISS', ref: 'Pension partielle et assurance volontaire', version: 'Politiques au 01/07/2022', statut: 'Source externe', url: 'https://www.issa.int/sites/default/files/documents/2024-07/Djibouti.pdf', pdf: 'corpus/pdf/08-textes-et-sources-transverses.pdf' },
+      ],
+      followups: ["Qu'est-ce que la pension proportionnelle ?", "Combien d'années faut-il avoir cotisé pour la retraite ?"],
+    },
+    'r-controle': {
+      theme: 'retraite', volet: 1,
+      text: `La pension de retraite est **payable à l'étranger**. Pour continuer à la percevoir, **tous les retraités** doivent justifier chaque année qu'ils sont en vie (**contrôle physique annuel**).
+
+**Retraités vivant à Djibouti**
+- Se présenter au contrôle physique annuel (le siège de la CNSS pour les pensions versées par virement), muni de la **carte de sécurité sociale** et de la **carte d'identité nationale**.
+
+**Retraités vivant à l'étranger**
+- Fournir chaque année un **certificat de vie et de résidence**, établi par la **représentation diplomatique de Djibouti** du pays de résidence.
+- Envoyer l'**original par la poste** à : Caisse Nationale de Sécurité Sociale, **BP 696, Djibouti**, en indiquant nom et prénom, adresse exacte, référence de la pièce d'identité, téléphone ou e-mail et type de retraite.
+- Dans les pays voisins, la CNSS organise aussi des **missions de contrôle sur place** (par exemple à Dire-Dawa et Hargeisa).
+
+Les dates de chaque campagne sont annoncées par communiqué sur cnss.dj.`,
+      sources: [
+        { doc: "À l'attention des retraité(e)s résident(e)s à l'étranger", ref: 'Communiqué de la direction de la CNSS', version: 'Actualité du 13/09/2020', statut: 'Archive — information datée', url: 'https://cnss.dj/2020/09/13/a-lattention-des-retraitees-residentes-a-letranger/', pdf: 'corpus/pdf/01-retraite.pdf' },
+        { doc: 'Contrôles physiques annuels des retraités bancarisés', ref: 'Communiqué', version: 'Actualité du 07/03/2019', statut: 'Archive — information datée', url: 'https://cnss.dj/', pdf: 'corpus/pdf/01-retraite.pdf' },
+        { doc: 'Contrôle physique des retraités dans les pays riverains', ref: 'Communiqué', version: 'Actualité du 18/07/2018', statut: 'Archive — information datée', url: 'https://cnss.dj/', pdf: 'corpus/pdf/01-retraite.pdf' },
+        { doc: 'Profil pays Djibouti — AISS', ref: 'Paiement des pensions à l\'étranger', version: 'Politiques au 01/07/2022', statut: 'Source externe', url: 'https://www.issa.int/sites/default/files/documents/2024-07/Djibouti.pdf', pdf: 'corpus/pdf/08-textes-et-sources-transverses.pdf' },
+      ],
+      followups: ['Quand la pension est-elle payée ?', 'Comment recevoir ma pension sur un compte bancaire ?'],
+    },
+    'e-non-declare': {
+      theme: 'employeur', volet: 0, label: 'EMPLOYEUR',
+      text: `Votre employeur (votre patron) a l'**obligation** de vous déclarer et de payer vos cotisations :
+
+- Il doit s'**affilier** à la CNSS dans les **48 heures** suivant l'ouverture de l'établissement (ou l'embauche, pour un employé de maison).
+- Il doit **immatriculer chaque salarié** et remplir un **certificat d'emploi**, puis verser les cotisations chaque mois (avant le 10).
+- Le défaut d'affiliation est une **infraction pénale**, et les retards de cotisation sont majorés (10 %, puis 3 %).
+
+**Ce que vous pouvez faire :**
+1. Demander à votre employeur votre **numéro d'immatriculation** (13 chiffres) et vos bulletins de salaire.
+2. Si vous n'êtes pas immatriculé, faire vous-même **au plus tôt une demande d'immatriculation** au service des immatriculations de la CNSS (Plateau du Serpent), avec votre pièce d'identité et une preuve de votre emploi (contrat, bulletins de salaire, certificat de travail).
+3. Signaler la situation à la CNSS : elle peut engager une **procédure contre l'employeur**.
+
+En cas d'accident du travail non déclaré par l'employeur, vous pouvez le **déclarer vous-même** jusqu'à la fin de la 2ᵉ année qui suit l'accident.`,
+      sources: [
+        { doc: 'Affiliation Employeur', ref: 'Réglementation (48 heures, défaut d\'affiliation)', version: 'Page consultée le 21/10/2026', statut: 'En vigueur', url: 'https://cnss.dj/affiliation-employeur/', pdf: 'corpus/pdf/06-employeurs-cotisations.pdf' },
+        { doc: 'Immatriculation Salarié', ref: 'Réglementation', version: 'Page consultée le 21/10/2026', statut: 'En vigueur', url: 'https://cnss.dj/immatriculation-salarie/', pdf: 'corpus/pdf/06-employeurs-cotisations.pdf' },
+        { doc: 'Pénalités sanctions et poursuites', ref: 'Majorations de retard', version: 'Page consultée le 21/10/2026', statut: 'En vigueur', url: 'https://cnss.dj/penalites-sanctions-et-poursuites/', pdf: 'corpus/pdf/06-employeurs-cotisations.pdf' },
+      ],
+      followups: ['Comment immatriculer un salarié ?', 'Quel est le taux de cotisation ?'],
+    },
     // ---------- Hors périmètre CDC (démonstration) ----------
     'amu-def': {
       theme: 'amu', volet: 0, label: 'ASSURANCE MALADIE',
@@ -375,6 +432,9 @@ Le plafond des salaires soumis à cotisation est fixé par l'arrêté n°2015-60
 
   // Mots-clés par sujet (groupe) et par intention.
   const groups = {
+    nondeclare: ['pas declare', 'pas declaree', 'non declare', 'm a pas declare', 'pas immatricule', 'pas inscrit a la cnss', 'pas affilie', 'paie pas mes cotisations', 'verse pas mes cotisations', 'ne cotise pas pour moi'],
+    peucotise: ['cotise que', 'cotise seulement', 'que 5 ans', 'que 10 ans', 'que 12 ans', 'moins de 15 ans', 'pas assez cotise', 'pas assez d annees', 'pas cotise assez', 'recuperer mes cotisations', 'rembourser mes cotisations', 'allocation unique'],
+    controle: ['controle physique', 'controle annuel', 'controle des retraites', 'certificat de vie', 'a l etranger', 'habite en', 'vis en', 'reside en', 'installe en', 'vivant en', 'vivent a l', 'vis a l', 'reside a l', 'resident a l', 'hors de djibouti'],
     cotisation: ['taux de cotisation', 'taux cotisation', 'taux des cotisations', 'combien cotise', 'cotisent', 'part patronale', 'part salariale', 'cotisation retraite', 'cotisations sociales', 'cotisation employeur', 'pourcentage de cotisation'],
     reversion: ['revers', 'veuve', 'veuf', 'conjoint', 'orphelin', 'deces', 'decede', 'mort de mon mari', 'mari decede'],
     anticipee: ['anticip', 'inaptitude', 'inapte', '50 ans', 'avant 60', 'plus tot', 'invalid', 'avant l age'],
@@ -398,6 +458,9 @@ Le plafond des salaires soumis à cotisation est fixé par l'arrêté n°2015-60
   };
   const route = {
     cotisation: { _: 'c-taux' },
+    nondeclare: { _: 'e-non-declare' },
+    peucotise: { _: 'r-peu-cotise' },
+    controle: { _: 'r-controle' },
     amu: { _: 'amu-def' },
     normale: { conditions: 'r-normale-cond', calcul: 'r-calcul', pieces: 'r-normale-pieces', demarche: 'r-demarche', paiement: 'r-paiement', duree: 'r-duree', _: 'r-normale-cond' },
     retraite: { conditions: 'r-types', calcul: 'r-calcul', pieces: 'r-normale-pieces', demarche: 'r-demarche', paiement: 'r-paiement', duree: 'r-duree', _: 'r-types' },
@@ -410,7 +473,7 @@ Le plafond des salaires soumis à cotisation est fixé par l'arrêté n°2015-60
     at: { calcul: 'a-indemn', paiement: 'a-indemn', _: 'a-declarer' },
     mp: { calcul: 'a-indemn', _: 'a-mp' },
   };
-  const scopeOfGroup = { normale: 'retraite', retraite: 'retraite', anticipee: 'retraite', proportionnelle: 'retraite', reversion: 'retraite', famille: 'famille', mariage: 'famille', maternite: 'maternite', at: 'atmp', mp: 'atmp' };
+  const scopeOfGroup = { peucotise: 'retraite', controle: 'retraite', normale: 'retraite', retraite: 'retraite', anticipee: 'retraite', proportionnelle: 'retraite', reversion: 'retraite', famille: 'famille', mariage: 'famille', maternite: 'maternite', at: 'atmp', mp: 'atmp' };
   const defaultForScope = { retraite: 'retraite', famille: 'famille', maternite: 'maternite', atmp: 'at' };
 
   return { entries, groups, intents, route, scopeOfGroup, defaultForScope };
