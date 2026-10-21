@@ -219,8 +219,10 @@ Déposez le dossier complet à un guichet de la CNSS.`,
 - **Paiement** : par **trimestre**, aux guichets de la CNSS
 - Exemple avec 6 enfants : 1 400 × 3 mois × 6 = **25 200 FDJ par trimestre**
 
+**Âge des enfants** : jusqu'à 15 ans, 18 ans pour un apprenti, 21 ans pour un étudiant ou un enfant handicapé (source AISS).
+
 **Bénéficiaires** : le père de famille, la femme salariée ayant la charge des enfants, la femme divorcée, veuve ou dont l'époux est au chômage, la mère célibataire.`,
-      sources: [src('famille', 'Rubrique « Mode de calcul »', 'Page consultée le 21/10/2026')],
+      sources: [src('famille', 'Rubrique « Mode de calcul »', 'Page consultée le 21/10/2026'), { doc: 'Profil pays Djibouti — AISS', ref: 'Allocations familiales : conditions', version: 'Politiques au 01/07/2022', statut: 'Source externe', url: 'https://www.issa.int/sites/default/files/documents/2024-07/Djibouti.pdf', pdf: 'corpus/pdf/08-textes-et-sources-transverses.pdf' }],
       followups: ['Quelles pièces pour les allocations familiales ?', "Qui a droit à l'allocation de mariage ?"],
     },
     'f-famille-pieces': {
@@ -329,9 +331,25 @@ Les maladies reconnues figurent dans des **tableaux** (maladie, délai de prise 
       sources: [src('at', 'Rubrique « Comment déclarer une maladie professionnelle ? »', 'Page consultée le 21/10/2026')],
       followups: ['Quelles indemnités en cas d\'accident de travail ?'],
     },
-    // ---------- Cotisations (hors périmètre CDC — démonstration) ----------
+    // ---------- Hors périmètre CDC (démonstration) ----------
+    'amu-def': {
+      theme: 'amu', volet: 0, label: 'ASSURANCE MALADIE',
+      text: `L'**Assurance Maladie Universelle (AMU)** offre une couverture médicale à **toute la population** vivant à Djibouti. Elle comprend deux régimes :
+
+- **AMO — Assurance maladie obligatoire** : régime contributif pour les salariés, fonctionnaires, travailleurs indépendants, retraités et étudiants, et leurs ayants droit. Cotisation des salariés : 2 % (salarié) + 5 % (employeur).
+- **PASS — Programme d'assistance sociale de santé** : volet solidaire pour les personnes **sans revenu**, financé par l'État et la CNSS.
+
+**Prise en charge** : soit directement auprès des prestataires conventionnés (tiers payant), soit par remboursement. Les soins doivent être prescrits et réalisés par des structures **conventionnées** (ex. hôpital Al Rahma, hôpital de Balbala).
+
+Pour en bénéficier, il faut être immatriculé et disposer de la **carte de sécurité sociale biométrique**. Numéro vert : **114**.`,
+      sources: [
+        { doc: "AMU — l'essentiel à savoir (dépliant)", url: 'https://cnss.dj/storage/2022/03/depliant_AMU.pdf', ref: 'Dépliant CNSS (transcription)', version: '2022', statut: 'En vigueur', pdf: 'corpus/pdf/05-assurance-maladie.pdf' },
+        { doc: 'Assurance Maladie Universelle', url: 'https://cnss.dj/assurance-maladie-universelle/', ref: 'Page du site cnss.dj', version: 'Page consultée le 21/10/2026', statut: 'En vigueur', pdf: 'corpus/pdf/05-assurance-maladie.pdf' },
+      ],
+      followups: ['Comment obtenir la carte de sécurité sociale biométrique ?', "Les étudiants sont-ils couverts par l'AMU ?"],
+    },
     'c-taux': {
-      theme: 'employeur', volet: 0,
+      theme: 'employeur', volet: 0, label: 'COTISATIONS',
       text: `Les **taux de cotisation** appliqués par la CNSS (part employeur + part salarié) sont les suivants :
 
 | Branche (régime général) | Employeur | Salarié | Total |
@@ -368,7 +386,7 @@ Le plafond des salaires soumis à cotisation est fixé par l'arrêté n°2015-60
     famille: ['allocations familiales', 'allocation familiale', 'prestation familiale', 'prestations familiales', 'enfant', 'familial'],
     mp: ['maladie professionnelle', 'maladies professionnelles', 'maladie pro'],
     at: ['accident', 'trajet', 'blesse', 'blessure', 'at/mp', 'atmp'],
-    amu: ['amu', 'assurance maladie', 'amo', 'biometrique', 'medicament', 'carte de securite sociale', 'pass ', 'etudiant', 'remboursement de soin'],
+    amu: ['amu', 'assurance maladie universelle', 'assurance maladie', 'amo'],
   };
   const intents = {
     pieces: ['document', 'piece', 'papier', 'fournir', 'justificatif', 'dossier a', 'constituer', 'formulaire'],
@@ -380,6 +398,7 @@ Le plafond des salaires soumis à cotisation est fixé par l'arrêté n°2015-60
   };
   const route = {
     cotisation: { _: 'c-taux' },
+    amu: { _: 'amu-def' },
     normale: { conditions: 'r-normale-cond', calcul: 'r-calcul', pieces: 'r-normale-pieces', demarche: 'r-demarche', paiement: 'r-paiement', duree: 'r-duree', _: 'r-normale-cond' },
     retraite: { conditions: 'r-types', calcul: 'r-calcul', pieces: 'r-normale-pieces', demarche: 'r-demarche', paiement: 'r-paiement', duree: 'r-duree', _: 'r-types' },
     anticipee: { pieces: 'r-anticipee-pieces', demarche: 'r-anticipee-pieces', paiement: 'r-paiement', duree: 'r-duree', _: 'r-anticipee' },

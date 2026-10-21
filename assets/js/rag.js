@@ -5,7 +5,7 @@ window.CNSS_RAG = (function () {
   const C = window.CNSS_CORPUS;
   if (!C) return null;
 
-  const STOP = new Set(('a au aux avec ce ces cet cette dans de des du elle en et eux il ils je la le les leur leurs lui ma mais me mes moi mon ne nos notre nous on ou par pas pour qu que qui sa se ses son sur ta te tes toi ton tu un une vos votre vous c d j l m n s t y ete etre est sont suis es etes ai as avons avez ont avoir fait faire faut peut peuvent puis puisje pourquoi comment quel quelle quels quelles quand combien quoi dois doit doivent veux voudrais savoir est-ce estce si cas plus moins tres tout tous toute toutes aussi bien car donc alors ainsi sans sous chez entre apres avant depuis cela ca celui celle ceux ici la-bas bonjour merci svp sil plait madame monsieur cnss').split(' '));
+  const STOP = new Set(('a au aux avec ce ces cet cette dans de des du elle en et eux il ils je la le les leur leurs lui ma mais me mes moi mon ne nos notre nous on ou par pas pour qu que qui sa se ses son sur ta te tes toi ton tu un une vos votre vous c d j l m n s t y ete etre est sont suis es etes ai as avons avez ont avoir fait faire faut peut peuvent puis puisje pourquoi comment quel quelle quels quelles quand combien quoi dois doit doivent veux voudrais savoir est-ce estce si cas quelque chose plus moins tres tout tous toute toutes aussi bien car donc alors ainsi sans sous chez entre apres avant depuis cela ca celui celle ceux ici la-bas bonjour merci svp sil plait madame monsieur cnss').split(' '));
   const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’'`]/g, ' ');
   function stem(w) {
     if (/^\d/.test(w) || w.length <= 4) return w;
@@ -17,14 +17,14 @@ window.CNSS_RAG = (function () {
   }
   const tokens = (s) => norm(s).split(/[^a-z0-9]+/).filter((w) => w && !STOP.has(w) && (w.length > 1 || /\d/.test(w))).map(stem);
   // Termes trop généraux pour juger si une question est couverte.
-  const GENERIC = new Set('couvert concerne possible savoir faire droit droits demande caisse nationale securite sociale information obtenir beneficier avoir prestation prestations quel conditions'.split(' ').map(stem));
+  const GENERIC = new Set('toucher touche touchent recevoir recoit percevoir percoit verse couvert concerne possible savoir faire droit droits demande caisse nationale securite sociale information obtenir beneficier avoir prestation prestations quel conditions'.split(' ').map(stem));
   // Synonymes (mots de l'assuré → mots des documents).
   const SYN_RAW = {
     retraite: 'pension vieillesse', pension: 'retraite vieillesse', minimum: 'minimal', minimal: 'minimum', veuve: 'reversion conjoint', veuf: 'reversion conjoint',
     deces: 'reversion', enfant: 'familiale allocation', enfants: 'familiale allocation', bebe: 'maternite naissance', enceinte: 'maternite grossesse',
     grossesse: 'maternite', accouchement: 'maternite', maladie: 'amu soins', soins: 'amu', medecin: 'soins', hopital: 'soins', patron: 'employeur',
     entreprise: 'employeur', taux: 'cotisation', cotiser: 'cotisation', argent: 'montant', payer: 'paiement', payee: 'paiement', paye: 'paiement',
-    carte: 'biometrique', blessure: 'accident', mari: 'mariage', epouse: 'mariage conjoint', femme: 'epouse', salaire: 'remuneration',
+    carte: 'biometrique', meurt: 'deces survivant', mort: 'deces survivant', decede: 'deces survivant', famille: 'survivant', orphelin: 'survivant', blessure: 'accident', mari: 'mariage', epouse: 'mariage conjoint', femme: 'epouse', salaire: 'remuneration',
   };
   const SYN = {};
   Object.entries(SYN_RAW).forEach(([k, v]) => { SYN[stem(k)] = v.split(' ').map(stem); });
@@ -114,7 +114,7 @@ window.CNSS_RAG = (function () {
   }
 
   // Une question est considérée couverte si le meilleur passage reprend l'essentiel de ses termes.
-  const covered = (f) => !!f.results.length && ((f.coverage >= 0.75 && f.results[0].score >= 4.5) || (f.coverage >= 0.6 && f.results[0].score >= 15));
+  const covered = (f) => !!f.results.length && ((f.qlen === 1 && f.coverage === 1 && f.results[0].score >= 3) || (f.coverage >= 0.75 && f.results[0].score >= 4.5) || (f.coverage >= 0.6 && f.results[0].score >= 15));
 
   return { search, compose, covered, tokens, docs: C.docs, meta: C.meta, count: (scope) => C.docs.filter((d) => !SCOPE[scope] || SCOPE[scope].includes(d.prestation)).length };
 })();

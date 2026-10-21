@@ -209,7 +209,7 @@
   // Questions où le corpus est plus précis que les réponses rédigées (cotisations, employeurs, AMU…).
   const CORPUS_FIRST = /employeur declar|immatricul|zone franche|fonctionnaire|amu|amo|pass |carte|etudiant|penalit|plafond|myafia|paternit|funera|carence|rente|deces|etranger/;
   // Termes de la question qui ne relèvent ni du sujet, ni de l'intention détectés.
-  const FILLER = 'pension retraite allocation allocations prestation prestations conge travail demande dossier numero telephone tel masque droit obtenir avoir parle moi explique informations info';
+  const FILLER = 'pension retraite allocation allocations prestation prestations conge travail demande dossier numero telephone tel masque assure assuree droit obtenir avoir parle moi explique informations info';
   function residual(question, group, intent) {
     if (!RAG) return [];
     const known = new Set(RAG.tokens([FILLER, (KB.groups[group] || []).join(' '), intent ? KB.intents[intent].join(' ') : ''].join(' ')));
@@ -413,7 +413,7 @@
       } else {
         html += res.entry.volet === 1 ? '<span class="cb-volet">RETRAITE · VOLET 1 · RÉPONSE VALIDÉE</span>'
           : res.entry.volet === 2 ? '<span class="cb-volet v2">VOLET 2 · RÉPONSE VALIDÉE</span>'
-            : '<span class="cb-volet corpus">COTISATIONS · HORS PÉRIMÈTRE CDC · DÉMONSTRATION</span>';
+            : `<span class="cb-volet corpus">${esc(res.entry.label || 'HORS PÉRIMÈTRE')} · HORS PÉRIMÈTRE CDC · DÉMONSTRATION</span>`;
       }
       if (res.usedContext) html += '<p style="font-size:.8em;color:#8a9bb0;margin:0 0 6px">↪ Suite de la conversation précédente</p>';
     }
